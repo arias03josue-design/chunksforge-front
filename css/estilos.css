@@ -1,0 +1,1161 @@
+/* ==========================================================================
+   Chunksforge · web de presentación
+   Mismo estilo visual que la aplicación: la paleta restringida de RetroPalette,
+   la fuente bitmap «Grimorio Pixel» (convertida a TrueType desde PixelFontData),
+   los paneles 9-slice del tema retro y los cursores pixel art.
+   Todos los sprites están ya ampliados x2: se dibujan a 1:1 y sin suavizado.
+   ========================================================================== */
+
+/* La fuente (@font-face) y la máscara del rótulo están en css/generado.css, incrustadas como data:
+   para que la web funcione también abriendo index.html directamente. */
+
+:root {
+	/* RetroPalette (31 colores). */
+	--sombra: #0d0907;
+	--cuero: #1c130d;
+	--perg-oscuro: #2b2119;
+	--perg-medio: #3d2f23;
+	--perg-claro: #574332;
+	--madera: #6b4226;
+	--madera-oscura: #4a2c18;
+	--madera-clara: #8a5a34;
+	--oro: #c69653;
+	--oro-brillante: #ffe17d;
+	--bronce: #8f562b;
+	--bronce-oscuro: #5e3519;
+	--hierro: #4a4853;
+	--hierro-oscuro: #2e2c35;
+	--hierro-claro: #8b8a99;
+	--crema: #f4eeda;
+	--crema-tenue: #b8ad92;
+	--gris: #6c6c6c;
+	--gris-oscuro: #3e3e42;
+	--esmeralda: #38b764;
+	--esmeralda-oscura: #1f7a44;
+	--carmesi: #e74c3c;
+	--carmesi-oscuro: #8e2a22;
+	--mar: #3b5d66;
+	--mar-profundo: #29404a;
+	--mar-claro: #73a5a8;
+	--bosque: #4f6b3a;
+	--bosque-oscuro: #34482a;
+	--papel: #d9c39a;
+	--papel-oscuro: #b89a6c;
+
+	--fuente: "Grimorio Pixel", "Courier New", monospace;
+	/* Tamaños de letra sólo múltiplos de 8: cada píxel del glifo cae en píxeles de pantalla. */
+	--letra: 16px;
+	--letra-titulo: 24px;
+	--letra-grande: 32px;
+	--linea: 24px;
+	--ancho: 1180px;
+	--sombra-texto: 2px 2px 0 var(--sombra);
+
+	--cursor: url("../assets/ui/cursor_gauntlet.png") 11 1, auto;
+	--cursor-mano: url("../assets/ui/cursor_gauntlet_gold.png") 11 1, pointer;
+	--cursor-texto: url("../assets/ui/cursor_ibeam.png") 15 17, text;
+}
+
+/* --- Base ------------------------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 72px;
+	cursor: var(--cursor);
+}
+
+body {
+	margin: 0;
+	background: var(--cuero);
+	color: var(--crema);
+	font-family: var(--fuente);
+	font-size: var(--letra);
+	line-height: var(--linea);
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: unset;
+	font-smooth: never;
+	text-rendering: optimizeSpeed;
+	image-rendering: pixelated;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	image-rendering: pixelated;
+}
+
+/* Las capturas son de pantalla completa: se suavizan al reducirlas. */
+img.captura {
+	image-rendering: auto;
+	width: 100%;
+	height: auto;
+}
+
+a,
+button,
+summary,
+[role="tab"],
+.ranura,
+.miniatura {
+	cursor: var(--cursor-mano);
+}
+
+p,
+li,
+dd {
+	cursor: var(--cursor-texto);
+}
+
+a {
+	color: var(--oro-brillante);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--crema);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	font-weight: normal;
+	text-shadow: var(--sombra-texto);
+}
+
+h2 {
+	font-size: var(--letra-grande);
+	line-height: 40px;
+	color: var(--oro-brillante);
+}
+
+h3 {
+	font-size: var(--letra-titulo);
+	line-height: 32px;
+	color: var(--oro-brillante);
+}
+
+h4 {
+	font-size: var(--letra);
+	color: var(--oro);
+}
+
+p {
+	margin: 0 0 var(--linea);
+	text-shadow: var(--sombra-texto);
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+strong {
+	font-weight: normal;
+	color: var(--oro-brillante);
+}
+
+kbd {
+	display: inline-block;
+	min-width: 28px;
+	padding: 0 4px;
+	border: 6px solid transparent;
+	border-image: url("../assets/ui/button_normal.png") 10 fill stretch;
+	color: var(--oro-brillante);
+	font-family: var(--fuente);
+	font-size: var(--letra);
+	line-height: 16px;
+	text-align: center;
+	text-shadow: var(--sombra-texto);
+}
+
+code {
+	font-family: var(--fuente);
+	color: var(--mar-claro);
+}
+
+::selection {
+	background: var(--oro);
+	color: var(--sombra);
+}
+
+.solo-lector {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+:focus-visible {
+	outline: 2px solid var(--oro-brillante);
+	outline-offset: 2px;
+}
+
+/* Barra de desplazamiento pixel art (Chromium / Firefox). */
+html {
+	scrollbar-color: var(--madera-clara) var(--perg-oscuro);
+}
+
+/* --- Paneles 9-slice (márgenes = los del tema de la app × 2) ----------------------------- */
+
+.panel-madera {
+	border: 14px solid transparent;
+	border-image: url("../assets/ui/panel_wood.png") 14 fill round;
+	padding: 6px 8px;
+}
+
+.panel-hundido {
+	border: 6px solid transparent;
+	border-image: url("../assets/ui/panel_inset.png") 6 fill round;
+	padding: 10px 12px;
+}
+
+.placa {
+	display: inline-block;
+	border: 6px solid transparent;
+	border-image: url("../assets/ui/panel_tooltip.png") 6 fill round;
+	padding: 2px 8px;
+	color: var(--oro);
+	text-shadow: var(--sombra-texto);
+}
+
+.marco-mapa {
+	border: 18px solid transparent;
+	border-image: url("../assets/ui/panel_map_frame.png") 18 round;
+	background: var(--sombra);
+}
+
+.separador {
+	height: 6px;
+	margin: 12px 0;
+	background: url("../assets/ui/separator.png") repeat-x;
+}
+
+/* --- Botones (normal / encima / pulsado, como el tema de la app) -------------------------- */
+
+.boton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 40px;
+	padding: 2px 14px 4px 12px;
+	border: 10px solid transparent;
+	border-image: url("../assets/ui/button_normal.png") 10 fill stretch;
+	background: none;
+	color: var(--crema);
+	font-family: var(--fuente);
+	font-size: var(--letra);
+	line-height: var(--linea);
+	text-shadow: var(--sombra-texto);
+	white-space: nowrap;
+}
+
+.boton:hover {
+	border-image-source: url("../assets/ui/button_hover.png");
+	color: var(--oro-brillante);
+}
+
+.boton:active {
+	border-image-source: url("../assets/ui/button_pressed.png");
+	padding: 4px 12px 2px 14px;
+}
+
+.boton-confirmar {
+	border-image-source: url("../assets/ui/button_confirm_normal.png");
+}
+
+.boton-confirmar:hover {
+	border-image-source: url("../assets/ui/button_confirm_hover.png");
+}
+
+.boton-confirmar:active {
+	border-image-source: url("../assets/ui/button_confirm_pressed.png");
+}
+
+.boton[aria-disabled="true"],
+.boton:disabled {
+	border-image-source: url("../assets/ui/button_disabled.png");
+	color: var(--gris);
+	text-shadow: none;
+	cursor: var(--cursor);
+}
+
+.boton img {
+	flex: none;
+}
+
+/* --- Barra superior (como la del editor) ----------------------------------------------- */
+
+.barra-superior {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	border-style: solid;
+	border-color: transparent;
+	border-width: 2px 0 6px;
+	border-image: url("../assets/ui/panel_bar_top.png") 2 0 6 0 fill round;
+}
+
+.barra-superior .contenido {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	max-width: var(--ancho);
+	margin: 0 auto;
+	padding: 4px 16px;
+}
+
+.logo {
+	flex: none;
+}
+
+.menu {
+	display: flex;
+	gap: 2px;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.menu a {
+	position: relative;
+	display: block;
+	padding: 6px 10px 6px 12px;
+	border: 6px solid transparent;
+	color: var(--crema);
+	text-shadow: var(--sombra-texto);
+	white-space: nowrap;
+}
+
+.menu a:hover,
+.menu a.activo {
+	border-image: url("../assets/ui/menu_hover.png") 4 fill stretch;
+	color: var(--oro-brillante);
+}
+
+/* La espada de los menús de la app señala la sección actual. */
+.menu a.activo::before {
+	content: "";
+	position: absolute;
+	left: -22px;
+	top: 50%;
+	width: 26px;
+	height: 14px;
+	margin-top: -7px;
+	background: url("../assets/ui/icon_sword.png") no-repeat;
+}
+
+.menu a.activo {
+	margin-left: 18px;
+}
+
+/* --- Portada: el menú principal de la app -------------------------------------------------- */
+
+.portada {
+	position: relative;
+	display: grid;
+	place-items: center;
+	min-height: calc(100vh - 44px);
+	min-height: calc(100svh - 44px);
+	padding: 48px 16px 72px;
+	overflow: hidden;
+	background: var(--mar-profundo);
+}
+
+#fondo-mapa {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	image-rendering: pixelated;
+}
+
+.portada .columna {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	text-align: center;
+}
+
+.titulo {
+	position: relative;
+	margin: 0;
+	line-height: 0;
+}
+
+.titulo img {
+	width: 438px;
+	height: 120px;
+	max-width: calc(100vw - 32px);
+	height: auto;
+}
+
+/* Destello que recorre el metal (como el shader de PixelTitle). */
+.titulo::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	/* La imagen de la máscara (el propio rótulo) la pone css/generado.css. */
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	background: linear-gradient(105deg, transparent 44%, rgba(255, 250, 220, 0.75) 48%, rgba(255, 250, 220, 0.75) 51%, transparent 55%);
+	background-size: 300% 100%;
+	background-repeat: no-repeat;
+	animation: destello 5s steps(60) infinite;
+	pointer-events: none;
+}
+
+@keyframes destello {
+	0% {
+		background-position: 130% 0;
+	}
+
+	60%,
+	100% {
+		background-position: -30% 0;
+	}
+}
+
+.portada .menu-principal {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	width: 380px;
+	max-width: calc(100vw - 32px);
+}
+
+.portada .menu-principal .boton {
+	width: 100%;
+}
+
+.version {
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	transform: translateX(-50%);
+	white-space: nowrap;
+}
+
+/* --- Secciones ------------------------------------------------------------------------------ */
+
+.seccion {
+	max-width: var(--ancho);
+	margin: 0 auto;
+	padding: 72px 16px 24px;
+}
+
+.cabecera-seccion {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 8px;
+}
+
+.cabecera-seccion .icono {
+	flex: none;
+	box-sizing: content-box;
+	border: 6px solid transparent;
+	border-image: url("../assets/ui/panel_inset.png") 6 fill round;
+	padding: 2px;
+}
+
+.entradilla {
+	max-width: 760px;
+	margin-bottom: 24px;
+	color: var(--crema-tenue);
+}
+
+.dos-columnas {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	gap: 24px;
+	align-items: start;
+}
+
+.lista-iconos li {
+	display: grid;
+	grid-template-columns: 36px 1fr;
+	gap: 12px;
+	align-items: start;
+	margin-bottom: 16px;
+}
+
+.lista-iconos li:last-child {
+	margin-bottom: 0;
+}
+
+.lista-iconos img {
+	width: 36px;
+	height: 36px;
+}
+
+.lista-iconos h4 {
+	margin-bottom: 0;
+}
+
+.lista-iconos p {
+	margin: 0;
+	color: var(--crema-tenue);
+}
+
+.vinetas li {
+	position: relative;
+	padding-left: 20px;
+	margin-bottom: 8px;
+	text-shadow: var(--sombra-texto);
+}
+
+.vinetas li::before {
+	content: "▸";
+	position: absolute;
+	left: 0;
+	color: var(--oro);
+}
+
+.datos {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 16px;
+}
+
+/* --- Etapas: pestañas estilo 16 bits ----------------------------------------------------- */
+
+.pestanas {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	padding-left: 12px;
+	margin-bottom: -6px;
+	position: relative;
+	z-index: 1;
+}
+
+.pestana {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 2px 6px 0;
+	border-style: solid;
+	border-color: transparent;
+	border-width: 12px 10px 6px;
+	border-image: url("../assets/ui/tab_normal.png") 12 10 6 10 fill stretch;
+	background: none;
+	color: var(--crema-tenue);
+	font-family: var(--fuente);
+	font-size: var(--letra);
+	line-height: var(--linea);
+	text-shadow: var(--sombra-texto);
+}
+
+.pestana:hover {
+	border-image-source: url("../assets/ui/tab_hover.png");
+	color: var(--oro-brillante);
+}
+
+.pestana[aria-selected="true"] {
+	border-width: 8px 10px 6px;
+	padding-top: 6px;
+	border-image: url("../assets/ui/tab_selected.png") 8 10 6 10 fill stretch;
+	color: var(--oro-brillante);
+}
+
+.panel-etapa {
+	display: grid;
+	grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+	gap: 24px;
+	align-items: center;
+}
+
+.panel-etapa[hidden] {
+	display: none;
+}
+
+/* --- Herramientas: inventario + inspector ------------------------------------------------- */
+
+.taller {
+	display: grid;
+	grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+	gap: 24px;
+	align-items: start;
+}
+
+.inventario {
+	display: grid;
+	grid-template-columns: repeat(4, 72px);
+	gap: 6px;
+	justify-content: start;
+}
+
+.grupo-inventario + .grupo-inventario {
+	margin-top: 16px;
+}
+
+.grupo-inventario h4 {
+	margin-bottom: 8px;
+}
+
+.ranura {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 72px;
+	height: 72px;
+	padding: 0;
+	border: 12px solid transparent;
+	border-image: url("../assets/ui/slot_normal.png") 12 fill stretch;
+	background: none;
+}
+
+.ranura:hover {
+	border-image-source: url("../assets/ui/slot_hover.png");
+}
+
+.ranura[aria-pressed="true"] {
+	border-image-source: url("../assets/ui/slot_pressed.png");
+}
+
+.ranura img {
+	width: 36px;
+	height: 36px;
+}
+
+.ranura .tecla {
+	position: absolute;
+	right: -8px;
+	bottom: -10px;
+	color: var(--oro-brillante);
+	text-shadow: var(--sombra-texto);
+}
+
+.inspector {
+	min-height: 520px;
+}
+
+.inspector .cabecera {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.inspector .cabecera .icono {
+	flex: none;
+	border: 6px solid transparent;
+	border-image: url("../assets/ui/panel_inset.png") 6 fill round;
+	padding: 4px;
+}
+
+.inspector .etapa {
+	color: var(--crema-tenue);
+}
+
+.capturas-herramienta {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 12px;
+	margin-top: 16px;
+}
+
+.capturas-herramienta > *,
+.taller > *,
+.dos-columnas > *,
+.panel-etapa > * {
+	min-width: 0;
+}
+
+.pista {
+	color: var(--crema-tenue);
+}
+
+/* --- Facilidades ---------------------------------------------------------------------- */
+
+.rejilla-tarjetas {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 16px;
+}
+
+.tarjeta h4 {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
+	color: var(--oro-brillante);
+}
+
+.tarjeta p {
+	color: var(--crema-tenue);
+}
+
+.destacadas {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+	margin-top: 24px;
+}
+
+.destacadas figure {
+	margin: 0;
+}
+
+figcaption {
+	margin-top: 10px;
+	color: var(--crema-tenue);
+	text-shadow: var(--sombra-texto);
+}
+
+/* --- Diferencias: «lo habitual» frente a Chunksforge -------------------------------------- */
+
+.comparativa {
+	display: grid;
+	gap: 10px;
+}
+
+.comparativa .fila {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) 40px minmax(0, 7fr);
+	gap: 12px;
+	align-items: center;
+}
+
+.comparativa .habitual {
+	color: var(--crema-tenue);
+}
+
+.comparativa .habitual h4 {
+	color: var(--crema-tenue);
+}
+
+.comparativa .flecha {
+	color: var(--oro-brillante);
+	font-size: var(--letra-titulo);
+	text-align: center;
+	text-shadow: var(--sombra-texto);
+}
+
+.comparativa .nuestro h4 {
+	color: var(--oro-brillante);
+}
+
+.comparativa .encabezados {
+	color: var(--oro);
+	padding: 0 18px;
+}
+
+/* --- Galería y visor ---------------------------------------------------------------------- */
+
+.galeria {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: 20px;
+}
+
+.galeria figure {
+	margin: 0;
+}
+
+.miniatura {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 18px solid transparent;
+	border-image: url("../assets/ui/panel_map_frame.png") 18 round;
+	background: var(--sombra);
+}
+
+.miniatura img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	image-rendering: auto;
+	transition: filter 120ms steps(3);
+}
+
+.miniatura:hover img {
+	filter: brightness(1.12);
+}
+
+.galeria-mapas {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin-bottom: 20px;
+}
+
+dialog.visor {
+	width: min(1280px, calc(100vw - 32px));
+	max-height: calc(100vh - 32px);
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--crema);
+	overflow: visible;
+}
+
+dialog.visor::backdrop {
+	background: rgba(13, 9, 7, 0.82);
+}
+
+.visor .ventana {
+	border-style: solid;
+	border-color: transparent;
+	border-width: 28px 12px 12px;
+	border-image: url("../assets/ui/panel_window.png") 28 12 12 12 fill round;
+	padding: 4px;
+}
+
+.visor .barra-titulo {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: -26px 0 8px;
+	min-height: 24px;
+	color: var(--oro-brillante);
+	text-shadow: var(--sombra-texto);
+}
+
+.visor .cerrar {
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	border: 0;
+	background: url("../assets/ui/icon_close.png") center no-repeat;
+}
+
+.visor .cerrar:hover {
+	background-image: url("../assets/ui/icon_close_hover.png");
+}
+
+#visor-imagen {
+	width: 100%;
+	max-height: calc(100vh - 170px);
+	object-fit: contain;
+	image-rendering: auto;
+	background: var(--sombra);
+}
+
+.visor .navegacion {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 8px;
+}
+
+/* --- Empezar ------------------------------------------------------------------------------ */
+
+.pasos {
+	counter-reset: paso;
+}
+
+.pasos li {
+	position: relative;
+	padding-left: 44px;
+	margin-bottom: 16px;
+	counter-increment: paso;
+	text-shadow: var(--sombra-texto);
+}
+
+.pasos li::before {
+	content: counter(paso);
+	position: absolute;
+	left: 0;
+	top: -4px;
+	width: 32px;
+	height: 32px;
+	border: 6px solid transparent;
+	border-image: url("../assets/ui/slot_pressed.png") 12 fill stretch;
+	color: var(--oro-brillante);
+	line-height: 20px;
+	text-align: center;
+}
+
+.atajos {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 10px 16px;
+	margin: 0;
+	align-items: center;
+}
+
+.atajos dt {
+	white-space: nowrap;
+}
+
+.atajos dd {
+	margin: 0;
+	text-shadow: var(--sombra-texto);
+}
+
+/* --- Pie --------------------------------------------------------------------------------- */
+
+.pie {
+	margin-top: 72px;
+	border-style: solid;
+	border-color: transparent;
+	border-width: 6px 0 2px;
+	border-image: url("../assets/ui/panel_bar_bottom.png") 6 0 2 0 fill round;
+}
+
+.pie .contenido {
+	max-width: var(--ancho);
+	margin: 0 auto;
+	padding: 14px 16px;
+	color: var(--crema);
+	text-shadow: var(--sombra-texto);
+}
+
+.pie-columnas {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 5fr);
+	gap: 24px;
+	align-items: start;
+	padding-top: 24px !important;
+}
+
+.pie-columnas img {
+	margin-bottom: 8px;
+}
+
+.pie-columnas p {
+	margin-bottom: 8px;
+}
+
+.pie h4 {
+	margin-bottom: 8px;
+	color: var(--oro-brillante);
+}
+
+.enlaces-pie li {
+	margin-bottom: 8px;
+}
+
+.enlaces-pie a::before {
+	content: "▸ ";
+	color: var(--oro);
+}
+
+.pie-final {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 8px 24px;
+	background: url("../assets/ui/separator.png") repeat-x top;
+	padding-top: 16px !important;
+	color: var(--crema-tenue) !important;
+}
+
+.correo {
+	overflow-wrap: break-word;
+}
+
+/* --- Precio -------------------------------------------------------------------------------- */
+
+.precio {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	gap: 24px;
+	align-items: stretch;
+}
+
+.precio > * {
+	min-width: 0;
+}
+
+.tarjeta-precio {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	text-align: center;
+}
+
+.tarjeta-precio p {
+	margin: 0;
+}
+
+/* Cifra grande: 64 px = 8 píxeles de pantalla por píxel del glifo. */
+.cifra {
+	margin: 8px 0 0 !important;
+	color: var(--oro-brillante);
+	font-size: 64px;
+	line-height: 72px;
+	text-shadow: 4px 4px 0 var(--sombra);
+}
+
+.moneda {
+	font-size: var(--letra-grande);
+	color: var(--oro);
+	text-shadow: var(--sombra-texto);
+}
+
+.pago {
+	color: var(--crema);
+	font-size: var(--letra-titulo);
+	line-height: 32px;
+}
+
+.tarjeta-precio .acciones {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+/* --- Páginas legales ------------------------------------------------------------------------- */
+
+.legal {
+	max-width: 960px;
+}
+
+.legal h1 {
+	font-size: var(--letra-grande);
+	line-height: 40px;
+	color: var(--oro-brillante);
+}
+
+.legal h2 {
+	margin: 32px 0 8px;
+	font-size: var(--letra-titulo);
+	line-height: 32px;
+}
+
+.legal .panel-madera > h2:first-child {
+	margin-top: 0;
+}
+
+.legal p,
+.legal li {
+	color: var(--crema);
+}
+
+.legal .vinetas {
+	margin-bottom: var(--linea);
+}
+
+.fecha {
+	color: var(--crema-tenue);
+}
+
+/* --- Aparición escalonada (como PixelTween) ------------------------------------------------- */
+
+.js .revelar {
+	opacity: 0;
+	transform: translateY(16px);
+	transition: opacity 320ms steps(4), transform 320ms steps(4);
+}
+
+.js .revelar.visible {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.titulo::after {
+		animation: none;
+		display: none;
+	}
+
+	.js .revelar {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* --- Pantallas estrechas ------------------------------------------------------------------ */
+
+@media (max-width: 980px) {
+	.dos-columnas,
+	.panel-etapa,
+	.taller,
+	.precio,
+	.pie-columnas {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.inventario {
+		grid-template-columns: repeat(auto-fill, 72px);
+	}
+
+	.inspector {
+		min-height: 0;
+	}
+
+	.destacadas {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.galeria-mapas {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	:root {
+		--letra-grande: 24px;
+	}
+
+	h2 {
+		line-height: 32px;
+	}
+
+	.barra-superior .logo {
+		display: none;
+	}
+
+	.portada {
+		padding-top: 32px;
+	}
+
+	.titulo img {
+		width: 219px;
+	}
+
+	.comparativa .fila {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 4px;
+	}
+
+	.comparativa .flecha {
+		transform: rotate(90deg);
+		text-align: left;
+		width: 24px;
+	}
+
+	.comparativa .encabezados {
+		display: none;
+	}
+
+	.galeria {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.seccion {
+		padding-top: 56px;
+	}
+}

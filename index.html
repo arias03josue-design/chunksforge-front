@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chunksforge · Editor de mapas fantásticos y topográficos</title>
+	<meta name="description" content="Chunksforge es un editor de mapas fantásticos por capas: esculpe el terreno, pinta mares y bosques, traza ríos y crea reinos con fronteras automáticas y territorios en disputa. Interfaz retro pixel art.">
+	<meta name="theme-color" content="#1c130d">
+	<link rel="icon" type="image/png" href="assets/ui/tool_relief.png">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/generado.css">
+	<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<header class="barra-superior">
+	<div class="contenido">
+		<a class="logo" href="#inicio" aria-label="Chunksforge, volver al inicio">
+			<img src="assets/arte/titulo-peq.png" width="146" height="40" alt="">
+		</a>
+		<nav class="menu" aria-label="Secciones">
+			<a href="#que-es">Qué es</a>
+			<a href="#etapas">Etapas</a>
+			<a href="#herramientas">Herramientas</a>
+			<a href="#facilidades">Facilidades</a>
+			<a href="#diferencias">Diferencias</a>
+			<a href="#galeria">Galería</a>
+			<a href="#precio">Precio</a>
+			<a href="#empezar">Empezar</a>
+		</nav>
+	</div>
+</header>
+
+<main>
+
+<!-- Portada: igual que el menú principal de la aplicación -->
+<section id="inicio" class="portada" aria-labelledby="titulo-principal">
+	<canvas id="fondo-mapa" aria-hidden="true"></canvas>
+	<div class="columna">
+		<h1 id="titulo-principal" class="titulo">
+			<img src="assets/arte/titulo.png" width="438" height="120" alt="Chunksforge">
+		</h1>
+		<span class="placa">Editor de mapas fantásticos y topográficos</span>
+		<div class="panel-madera menu-principal">
+			<a class="boton boton-confirmar" href="#herramientas">Ver herramientas</a>
+			<a class="boton" href="#que-es">¿Qué es Chunksforge?</a>
+			<a class="boton" href="#galeria">Galería de mapas</a>
+			<a class="boton" href="#diferencias">Qué lo hace distinto</a>
+			<a class="boton" href="#precio">Comprar · $16 USD, pago único</a>
+		</div>
+	</div>
+	<span class="placa version">v0.3.0 · Hecho con Godot 4.7</span>
+</section>
+
+<!-- Qué es y para qué sirve -->
+<section id="que-es" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/tool_land.png" width="36" height="36" alt="">
+		<h2>¿Qué es Chunksforge?</h2>
+	</div>
+	<p class="entradilla revelar">
+		Un editor de mapas para mundos inventados. Esculpes el terreno como si fuera arcilla, el agua y las costas aparecen solas,
+		y encima colocas montañas, bosques, ríos, ciudades y nombres. Cuando el mundo está listo, en la segunda etapa lo repartes
+		en reinos con sus fronteras, capitales y territorios en disputa. Todo con una interfaz de RPG retro en pixel art.
+	</p>
+	<div class="dos-columnas">
+		<div class="panel-madera revelar">
+			<h3>¿Para qué sirve?</h3>
+			<div class="separador"></div>
+			<ul class="lista-iconos">
+				<li>
+					<img src="assets/ui/marker_capital.png" width="36" height="36" alt="">
+					<div>
+						<h4>Campañas de rol</h4>
+						<p>El continente de tu partida, con sus reinos, ciudades y caminos, listo para imprimir o compartir con el grupo.</p>
+					</div>
+				</li>
+				<li>
+					<img src="assets/ui/tool_label.png" width="36" height="36" alt="">
+					<div>
+						<h4>Novelas y relatos</h4>
+						<p>El mapa de tu mundo con topónimos, mares y fronteras que crecen al mismo ritmo que la historia.</p>
+					</div>
+				</li>
+				<li>
+					<img src="assets/ui/tool_settlement.png" width="36" height="36" alt="">
+					<div>
+						<h4>Videojuegos y prototipos</h4>
+						<p>Exporta PNG de alta resolución para el diseño de niveles, la documentación o el propio juego.</p>
+					</div>
+				</li>
+				<li>
+					<img src="assets/ui/tool_nation.png" width="36" height="36" alt="">
+					<div>
+						<h4>Worldbuilding</h4>
+						<p>Reinos, provincias y territorios en disputa con el porcentaje de superficie de cada uno siempre a la vista.</p>
+					</div>
+				</li>
+			</ul>
+			<div class="datos">
+				<span class="placa">Mapas 1080p, 2K, 4K o a medida</span>
+				<span class="placa">PNG de 0,5× a 4×</span>
+				<span class="placa">Archivo .map único</span>
+			</div>
+		</div>
+		<figure class="marco-mapa revelar" style="margin:0">
+			<img class="captura" src="assets/capturas/editor.webp" width="1600" height="900" alt="El editor de Chunksforge: barra de herramientas a la izquierda, el mapa enmarcado en el centro e inspector a la derecha" loading="lazy">
+		</figure>
+	</div>
+</section>
+
+<!-- Las dos etapas -->
+<section id="etapas" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/icon_stage_political.png" width="28" height="20" alt="">
+		<h2>Dos etapas, un mismo mapa</h2>
+	</div>
+	<p class="entradilla revelar">
+		Primero el mundo físico; después, quién gobierna cada rincón. Las dos etapas viven en el mismo proyecto
+		y se cambian con un clic (o con <kbd>Ctrl</kbd>+<kbd>1</kbd> y <kbd>Ctrl</kbd>+<kbd>2</kbd>): la capa política se superpone al terreno sin modificarlo.
+	</p>
+	<div class="pestanas revelar" role="tablist" aria-label="Etapas del mapa">
+		<button class="pestana" role="tab" id="pestana-fisica" aria-controls="etapa-fisica" aria-selected="true">
+			<img src="assets/ui/icon_stage_physical.png" width="24" height="24" alt="">Terreno (Físico)
+		</button>
+		<button class="pestana" role="tab" id="pestana-politica" aria-controls="etapa-politica" aria-selected="false" tabindex="-1">
+			<img src="assets/ui/icon_stage_political.png" width="28" height="20" alt="">Geopolítica (Político)
+		</button>
+	</div>
+	<div class="panel-madera revelar">
+		<div class="panel-etapa" id="etapa-fisica" role="tabpanel" aria-labelledby="pestana-fisica">
+			<figure class="marco-mapa" style="margin:0">
+				<img class="captura" src="assets/capturas/vegetacion.webp" width="1600" height="900" alt="Etapa 1: un continente con montañas y bosques estampados sobre el terreno" loading="lazy">
+			</figure>
+			<div>
+				<h3>Etapa 1 · Terreno</h3>
+				<div class="separador"></div>
+				<ul class="vinetas">
+					<li>Eleva continentes, hunde mares, suaviza y aplana con pinceles de caída suave.</li>
+					<li>Costas, profundidad del agua, oleaje y anillos de costa calculados al momento.</li>
+					<li>Sombreado de relieve y curvas de nivel opcionales; nivel del mar ajustable.</li>
+					<li>Montañas, colinas y bosques con estampado o pincel de dispersión.</li>
+					<li>Ríos que se ensanchan hacia la desembocadura y caminos discontinuos.</li>
+					<li>Ciudades, castillos, ruinas, etiquetas y rejilla cuadrada o hexagonal.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="panel-etapa" id="etapa-politica" role="tabpanel" aria-labelledby="pestana-politica" hidden>
+			<figure class="marco-mapa" style="margin:0">
+				<img class="captura" src="assets/capturas/reinos.webp" width="1600" height="900" alt="Etapa 2: el mismo mapa repartido en reinos de colores con sus fronteras y nombres" loading="lazy">
+			</figure>
+			<div>
+				<h3>Etapa 2 · Geopolítica</h3>
+				<div class="separador"></div>
+				<ul class="vinetas">
+					<li>El terreno se aplana a un atlas de pergamino y aparece el color de cada reino.</li>
+					<li>Pincel y cubo de nación; las aguas territoriales son opcionales.</li>
+					<li>Fronteras automáticas a partir de tus capitales, que siguen costas y cordilleras.</li>
+					<li>Capitales, ciudades, villas y puertos con su etiqueta enlazada.</li>
+					<li>Límites trazados a mano: continuos, punteados o discontinuos.</li>
+					<li>Territorios en disputa con franjas de los colores de quienes los reclaman.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Herramientas: inventario e inspector -->
+<section id="herramientas" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/tool_relief.png" width="36" height="36" alt="">
+		<h2>Herramientas</h2>
+	</div>
+	<p class="entradilla revelar">
+		Cada herramienta tiene su ranura y su tecla, igual que en la barra del editor. Elige una
+		(o pulsa su tecla mientras ves esta sección) para ver qué hace en el inspector.
+	</p>
+	<div class="taller">
+		<div class="panel-madera revelar" id="inventario">
+			<div class="grupo-inventario">
+				<h4>Etapa 1 · Terreno</h4>
+				<div class="inventario" data-etapa="1"></div>
+			</div>
+			<div class="grupo-inventario">
+				<h4>Etapa 2 · Geopolítica</h4>
+				<div class="inventario" data-etapa="2"></div>
+			</div>
+			<div class="grupo-inventario">
+				<h4>En las dos etapas</h4>
+				<div class="inventario" data-etapa="3"></div>
+			</div>
+		</div>
+		<article class="panel-madera inspector revelar" id="inspector" aria-live="polite">
+			<noscript><p>Activa JavaScript para explorar las herramientas una a una.</p></noscript>
+		</article>
+	</div>
+</section>
+
+<!-- Facilidades -->
+<section id="facilidades" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/icon_star.png" width="22" height="22" alt="">
+		<h2>Facilidades</h2>
+	</div>
+	<p class="entradilla revelar">Pequeñas cosas que hacen que dibujar un mundo entero sea cómodo y seguro.</p>
+	<div class="rejilla-tarjetas">
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_undo.png" alt="">Deshacer en todo</h4>
+			<p>Cada trazo, sello, borrado o cambio político se deshace con <kbd>Ctrl</kbd>+<kbd>Z</kbd> y se rehace con <kbd>Ctrl</kbd>+<kbd>Y</kbd>.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_file.png" alt="">Un solo archivo .map</h4>
+			<p>Terreno, símbolos, ríos, etiquetas, reinos, disputas y ajustes en un único archivo abierto (ZIP con JSON legible).</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_eye.png" alt="">Exportación nítida</h4>
+			<p>PNG de 0,5× a 4× sin marco ni guías. Lo que ocultas en el menú Capas tampoco se exporta y la rejilla es opcional.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_reload.png" alt="">Mundos al azar</h4>
+			<p>Empieza con un continente generado por ruido procedural o con un lienzo bajo el agua para dibujarlo a mano alzada.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_folder_open.png" alt="">Tus propios assets</h4>
+			<p>Copia PNG o WebP en una carpeta y pulsa Recargar. Sets por subcarpeta, <code>config.json</code> con escala, giro y tinte, y texturas propias de tierra, agua y fronteras.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/tool_grid.png" width="36" height="36" alt="">Capas y rejilla</h4>
+			<p>Muestra u oculta cada capa y superpone una rejilla cuadrada o hexagonal con su tamaño, grosor, color y desplazamiento.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/tool_label.png" width="36" height="36" alt="">Nombres que se adaptan</h4>
+			<p>El nombre de cada reino se centra, se gira y se curva siguiendo su territorio. Las villas se ocultan al alejar la vista.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/tool_eraser.png" width="36" height="36" alt="">Borrar sin miedo</h4>
+			<p>Borrador para cualquier elemento, clic derecho en cada herramienta y vaciado de capas con confirmación.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_check.png" alt="">Nada se pierde</h4>
+			<p>Si cierras la ventana o vuelves al menú con cambios sin guardar, el editor te pregunta antes.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_coords.png" alt="">Fluido en mapas grandes</h4>
+			<p>El pincel responde en pocos milisegundos y las fronteras automáticas de un mapa 1080p se calculan en menos de un segundo.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_sword.png" alt="">Interfaz pixel art nítida</h4>
+			<p>Se escala sólo por números enteros, con fuente y cursores propios: nunca se ve borrosa.</p>
+		</div>
+		<div class="panel-hundido tarjeta revelar">
+			<h4><img src="assets/ui/icon_zoom.png" alt="">Atajos para todo</h4>
+			<p>Zoom hacia el cursor, desplazamiento con espacio y una tecla por herramienta para no soltar el ratón.</p>
+		</div>
+	</div>
+	<div class="destacadas">
+		<figure class="revelar">
+			<div class="marco-mapa"><img class="captura" src="assets/capturas/gestor-assets.webp" width="1600" height="900" alt="El Gestor de assets con pestañas por categoría, miniaturas y detalle" loading="lazy"></div>
+			<figcaption>Gestor de assets: abre la carpeta, recarga e importa sin salir del editor.</figcaption>
+		</figure>
+		<figure class="revelar">
+			<div class="marco-mapa"><img class="captura" src="assets/capturas/exportar.webp" width="1600" height="900" alt="Diálogo de exportación a PNG con la escala y la resolución final" loading="lazy"></div>
+			<figcaption>Exportar PNG: eliges la escala y ves la resolución final.</figcaption>
+		</figure>
+		<figure class="revelar">
+			<div class="marco-mapa"><img class="captura" src="assets/capturas/cambios-sin-guardar.webp" width="1600" height="900" alt="Aviso de cambios sin guardar con las opciones guardar y cerrar, cancelar o cerrar sin guardar" loading="lazy"></div>
+			<figcaption>Aviso de cambios sin guardar al cerrar la ventana.</figcaption>
+		</figure>
+	</div>
+</section>
+
+<!-- Qué lo diferencia -->
+<section id="diferencias" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/icon_custom_badge.png" width="14" height="14" alt="">
+		<h2>Qué lo hace distinto</h2>
+	</div>
+	<p class="entradilla revelar">
+		Muchos editores de mapas se centran en pintar una imagen bonita y muchos generadores en crear un mundo al azar.
+		Chunksforge junta las dos cosas: control a mano de cada colina y un mundo político que se calcula solo.
+	</p>
+	<div class="comparativa">
+		<div class="fila encabezados revelar">
+			<span>En muchas herramientas…</span><span></span><span>En Chunksforge</span>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>El terreno es una imagen</h4><p>Se pinta con texturas, sin altura real.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Un heightmap de verdad</h4><p>Esculpes la altura: el mar, las costas, el sombreado de relieve y las curvas de nivel salen de ella, y el nivel del mar se mueve con un deslizador.</p></div>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>Lo político va aparte</h4><p>Reinos y fronteras en capas manuales o en otro programa.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Dos etapas en un proyecto</h4><p>El terreno físico y la geopolítica conviven en el mismo mapa; la capa política se superpone sin tocar el terreno.</p></div>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>Fronteras línea a línea</h4><p>Cada frontera se dibuja a mano.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Fronteras que entienden el terreno</h4><p>Un Voronoi geodésico reparte la tierra desde tus capitales: no cruza el mar y se frena en las cordilleras. Y si quieres, también las trazas a mano.</p></div>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>Conflictos con apaños</h4><p>Zonas disputadas marcadas con trucos de color.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Territorios en disputa</h4><p>Franjas diagonales con los colores de cada reino que la reclama, frontera discontinua, nombre propio y una forma de resolverla a favor de quien elijas.</p></div>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>Sin cifras</h4><p>No sabes cuánto ocupa cada reino.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Estadísticas a la vista</h4><p>Porcentaje del mapa por reino, por provincia y por zona en disputa, que no se suma a ninguno de los reclamantes.</p></div>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>Recursos propios con pasos extra</h4><p>Importadores o formatos especiales.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Una carpeta y "Recargar"</h4><p>Tus PNG aparecen en la paleta con su marca dorada; si falta uno, el mapa conserva su sitio con un marcador "?".</p></div>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>Cuenta y conexión</h4><p>Muchas herramientas web piden registrarse.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Tu mapa es tuyo</h4><p>Funciona sin conexión y sin cuenta. El .map es un ZIP con JSON y el heightmap: legible y fácil de respaldar.</p></div>
+		</div>
+		<div class="fila revelar">
+			<div class="panel-hundido habitual"><h4>Interfaces genéricas</h4><p>Ventanas y botones de siempre.</p></div>
+			<span class="flecha" aria-hidden="true">→</span>
+			<div class="panel-madera nuestro"><h4>Un grimorio de RPG</h4><p>Paneles de madera, pergamino y oro, fuente propia y cursores de guantelete: dibujar un mundo se siente como jugar en uno.</p></div>
+		</div>
+	</div>
+</section>
+
+<!-- Galería -->
+<section id="galeria" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/icon_eye.png" width="20" height="14" alt="">
+		<h2>Galería</h2>
+	</div>
+	<p class="entradilla revelar">Mapas exportados y capturas reales del programa. Haz clic para verlas en grande.</p>
+	<div id="galeria-lista">
+	<div class="galeria galeria-mapas">
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/mapa-exportado.webp" data-titulo="Mapa exportado a PNG (Etapa 1)"><img src="assets/capturas/mapa-exportado.webp" alt="Mapa exportado: una isla con bosques, colinas y montañas nevadas sobre un mar con rejilla hexagonal" loading="lazy"></button><figcaption>Un mapa exportado a PNG: terreno, bosques, montañas, río, rejilla hexagonal y etiquetas.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/mapa-politico.webp" data-titulo="Mapa político exportado (Etapa 2)"><img src="assets/capturas/mapa-politico.webp" alt="El mismo mapa en la etapa política con tres reinos de colores" loading="lazy"></button><figcaption>El mismo mundo en la Etapa 2, repartido en tres reinos.</figcaption></figure>
+	</div>
+	<div class="galeria">
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/disputa.webp" data-titulo="Territorio en disputa"><img src="assets/capturas/disputa.webp" alt="Una zona a franjas diagonales verdes y azules entre dos reinos, con su nombre en cursiva" loading="lazy"></button><figcaption>Una marca disputada entre dos reinos, con su propio porcentaje.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/menu.webp" data-titulo="Menú principal"><img src="assets/capturas/menu.webp" alt="Menú principal con el rótulo Chunksforge sobre un mapa de pergamino animado" loading="lazy"></button><figcaption>El menú principal, con barcos y serpientes marinas en movimiento.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/zoom-politico.webp" data-titulo="Vista política de cerca"><img src="assets/capturas/zoom-politico.webp" alt="Vista política ampliada con capitales y nombres de ciudades" loading="lazy"></button><figcaption>De cerca: capitales, ciudades y nombres con zoom.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/paleta-assets.webp" data-titulo="Sellos personalizados"><img src="assets/capturas/paleta-assets.webp" alt="Montañas pixel art propias en la paleta del pincel de sellos con su vista previa flotante" loading="lazy"></button><figcaption>Montañas propias en la paleta, con vista previa flotante.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/nuevo-mapa.webp" data-titulo="Nuevo mapa"><img src="assets/capturas/nuevo-mapa.webp" alt="Diálogo de nuevo mapa con nombre, resolución y modo de inicio" loading="lazy"></button><figcaption>Nuevo mapa: nombre, resolución y modo de inicio.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/capas.webp" data-titulo="Menú Capas"><img src="assets/capturas/capas.webp" alt="Menú Capas desplegado para mostrar u ocultar agua, terreno, ríos, símbolos y etiquetas" loading="lazy"></button><figcaption>Cada capa se muestra u oculta (y no se exporta si está oculta).</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/franjas-disputa.webp" data-titulo="Franjas de una disputa"><img src="assets/capturas/franjas-disputa.webp" alt="Detalle de las franjas diagonales y la frontera discontinua de un territorio en disputa" loading="lazy"></button><figcaption>Detalle de las franjas y la frontera discontinua.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/asentamientos.webp" data-titulo="Ciudades y puntos de interés"><img src="assets/capturas/asentamientos.webp" alt="Capitales y ciudades colocadas en la etapa política, cada una con su etiqueta" loading="lazy"></button><figcaption>Capitales, ciudades, villas y puertos con su etiqueta.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/borrador.webp" data-titulo="Borrador"><img src="assets/capturas/borrador.webp" alt="El Borrador resaltando en rojo las montañas que va a borrar" loading="lazy"></button><figcaption>El Borrador resalta en rojo lo que va a borrar.</figcaption></figure>
+	</div>
+	</div>
+</section>
+
+<!-- Precio -->
+<section id="precio" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/icon_star.png" width="22" height="22" alt="">
+		<h2>Precio</h2>
+	</div>
+	<p class="entradilla revelar">Un solo pago y Chunksforge es tuyo: sin suscripciones, sin cuentas y sin cargos recurrentes.</p>
+	<div class="precio">
+		<div class="panel-madera tarjeta-precio revelar">
+			<span class="placa">Licencia completa</span>
+			<p class="cifra"><span class="solo-lector">Precio: 16 dólares estadounidenses, pago único.</span><span aria-hidden="true">$16 <span class="moneda">USD</span></span></p>
+			<p class="pago" aria-hidden="true">Pago único</p>
+			<p class="pista">Sin suscripción ni pagos recurrentes.</p>
+			<div class="acciones">
+				<span class="boton" aria-disabled="true" title="La tienda abrirá pronto">Comprar (próximamente)</span>
+				<a class="boton boton-confirmar" href="mailto:desarrolloindependiente@outlook.com?subject=Chunksforge">Escribir a soporte</a>
+			</div>
+		</div>
+		<div class="panel-madera revelar">
+			<h3>Qué incluye</h3>
+			<div class="separador"></div>
+			<ul class="vinetas">
+				<li>Chunksforge completo: las dos etapas y todas sus herramientas.</li>
+				<li>Software de escritorio digital: se entrega como descarga, sin envío físico.</li>
+				<li>Licencia de uso permanente de la versión que compras.</li>
+				<li>Funciona sin conexión y sin crear ninguna cuenta.</li>
+				<li>Tus mapas, ajustes y assets se guardan sólo en tu equipo.</li>
+				<li>Soporte por correo: <a class="correo" href="mailto:desarrolloindependiente@outlook.com">desarrolloindependiente@<wbr>outlook.com</a></li>
+			</ul>
+			<p class="pista" style="margin-top:16px">Antes de comprar, consulta los <a href="terminos.html">Términos del Servicio</a> y la <a href="privacidad.html">Política de Privacidad</a>.</p>
+		</div>
+	</div>
+</section>
+
+<!-- Empezar -->
+<section id="empezar" class="seccion">
+	<div class="cabecera-seccion revelar">
+		<img class="icono" src="assets/ui/icon_forward.png" width="24" height="22" alt="">
+		<h2>Empezar</h2>
+	</div>
+	<div class="dos-columnas">
+		<div class="panel-madera revelar">
+			<h3>Tu primer mapa</h3>
+			<div class="separador"></div>
+			<ol class="pasos" style="padding:0;margin:0;list-style:none">
+				<li>Instala Chunksforge en tu equipo y ábrelo: es un programa de escritorio, no necesitas conexión ni cuenta.</li>
+				<li>En el menú, <strong>Nuevo Mapa</strong>: elige nombre, resolución y si empiezas con un mundo al azar o a mano alzada.</li>
+				<li>Esculpe con <strong>Tierra</strong> y <strong>Agua</strong>, estampa relieve y bosques y traza los ríos.</li>
+				<li>Pasa a la Etapa 2 con <kbd>Ctrl</kbd>+<kbd>2</kbd>, coloca capitales y pulsa <strong>Generar Fronteras Automáticas</strong>.</li>
+				<li>Guarda con <kbd>Ctrl</kbd>+<kbd>S</kbd> y exporta tu PNG con <kbd>Ctrl</kbd>+<kbd>E</kbd>.</li>
+			</ol>
+		</div>
+		<div class="panel-madera revelar">
+			<h3>Atajos de teclado</h3>
+			<div class="separador"></div>
+			<dl class="atajos">
+				<dt>Rueda</dt><dd>Zoom hacia el cursor</dd>
+				<dt><kbd>Espacio</kbd> + arrastrar</dt><dd>Desplazar la vista (también botón central)</dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>0</kbd></dt><dd>Encajar el mapa en la vista</dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Y</kbd></dt><dd>Deshacer / rehacer</dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>S</kbd></dt><dd>Guardar (con <kbd>Mayús</kbd>: guardar como)</dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>E</kbd></dt><dd>Exportar PNG</dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>1</kbd> / <kbd>2</kbd></dt><dd>Etapa física / política</dd>
+				<dt>Clic derecho</dt><dd>Borrar lo que hay bajo el cursor</dd>
+			</dl>
+		</div>
+	</div>
+</section>
+
+</main>
+
+<footer class="pie">
+	<div class="contenido pie-columnas">
+		<div>
+			<img src="assets/arte/titulo-peq.png" width="146" height="40" alt="Chunksforge">
+			<p>Editor de mapas fantásticos y topográficos. Software de escritorio digital, v0.3.0.</p>
+			<p><strong>$16 USD · pago único</strong></p>
+		</div>
+		<nav aria-label="Información legal">
+			<h4>Legal</h4>
+			<ul class="enlaces-pie">
+				<li><a href="privacidad.html">Política de Privacidad</a></li>
+				<li><a href="terminos.html">Términos del Servicio</a></li>
+			</ul>
+		</nav>
+		<div>
+			<h4>Contacto</h4>
+			<p>Soporte: <a class="correo" href="mailto:desarrolloindependiente@outlook.com">desarrolloindependiente@<wbr>outlook.com</a></p>
+			<p class="pista">Dudas sobre la compra, problemas o sugerencias: te responderemos por correo.</p>
+		</div>
+	</div>
+	<div class="contenido pie-final">
+		<span>Chunksforge 2026 · Hecho con Godot 4.7 y GDScript</span>
+		<span>La fuente, los paneles y los sprites de esta web los genera el propio programa.</span>
+	</div>
+</footer>
+
+<dialog class="visor" id="visor" aria-labelledby="visor-titulo">
+	<div class="ventana">
+		<div class="barra-titulo">
+			<span id="visor-titulo">Captura</span>
+			<button class="cerrar" type="button" aria-label="Cerrar" data-cerrar></button>
+		</div>
+		<img id="visor-imagen" src="" alt="">
+		<div class="navegacion">
+			<button class="boton" type="button" data-paso="-1"><img src="assets/ui/icon_back.png" width="24" height="22" alt="">Anterior</button>
+			<span class="placa" id="visor-contador"></span>
+			<button class="boton" type="button" data-paso="1">Siguiente<img src="assets/ui/icon_forward.png" width="24" height="22" alt=""></button>
+		</div>
+	</div>
+</dialog>
+
+<script src="js/fondo.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
