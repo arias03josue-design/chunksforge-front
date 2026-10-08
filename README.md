@@ -15,6 +15,15 @@ Usa el mismo estilo visual que el programa:
 - los paneles 9-slice de madera, pergamino y oro, y los cursores de guantelete;
 - el mapa animado del menú principal como portada.
 
+## Idiomas (español / inglés)
+
+- Todas las páginas tienen el selector **ES / EN** en la barra superior. La elección se guarda en el navegador.
+- También se puede forzar con `?lang=es` o `?lang=en` en la URL. Sin elección previa, se usa el idioma del navegador.
+- Cada texto está dos veces en el HTML, con `lang="es"` y `lang="en"`, y el CSS sólo muestra el idioma activo. Sin JavaScript se ve el español.
+- Los atributos traducibles (`alt`, `title`, `aria-label`...) llevan la versión inglesa en `data-en-<atributo>`.
+- Los textos generados por JavaScript (el inventario de herramientas) están en `js/main.js` como `{ es, en }`.
+- Los textos legales vienen de los `.txt` (en inglés). Cada página legal muestra el original en inglés o su traducción al español, según el idioma elegido.
+
 ## Verla
 
 - Abre `index.html` en el navegador, o
@@ -30,8 +39,11 @@ y entra en http://localhost:8080.
 
 ```
 index.html            la página principal (por secciones, con el precio)
-terminos.html         Términos del Servicio (software de escritorio digital, 16 USD pago único)
-privacidad.html       Política de Privacidad
+eula.html             Acuerdo de Licencia de Usuario Final (de eula.txt)
+terms.html            Términos del Servicio (de termsofservice.txt)
+privacy.html          Política de Privacidad (de PrivacyPolicy.txt)
+*.txt                 textos legales originales, en inglés; las páginas incluyen además la traducción al español
+js/idioma.js          selector de idioma español / inglés (se carga en el <head> de todas las páginas)
 css/estilos.css       paleta y componentes 9-slice
 css/generado.css      fuente y máscara del rótulo incrustadas (generado; así funciona también con file://)
 js/main.js            fondo animado, inventario de herramientas, pestañas, visor y menú

@@ -1,0 +1,25 @@
+PRIVACY POLICY - CHUNKSFORGE
+
+Last Updated: October 2026
+
+ChunksForge respects your privacy. This Privacy Policy outlines what minimal information is processed when using our application and website.
+
+1. INFORMATION WE COLLECT
+We adhere to a strict data minimization principle:
+- Registered Email Address: Used to verify purchase and license validity.
+- Hardware Fingerprint: An anonymized cryptographic hash (SHA-256) generated from system component identifiers (CPU/Motherboard/Disk) to enforce single-device licensing.
+- IP Address: Temporarily logged during activation requests for security and rate-limiting purposes.
+
+2. TELEMETRY & USAGE DATA
+ChunksForge DOES NOT collect, transmit, or monitor telemetry, software usage statistics, or user activity logs while you are designing or exporting maps offline.
+
+3. THIRD-PARTY SERVICES
+Payment processing and merchant transactions are handled entirely by our authorized Merchant of Record, Lemon Squeezy (and its underlying financial infrastructure). We do not store or process your financial card details.
+
+4. DATA SECURITY & RETENTION
+Your email and associated Hardware Fingerprint hash are stored securely in our relational licensing database strictly to facilitate software activation and prevent unauthorized distribution.
+
+5. UPDATES TO THIS POLICY
+We may update this policy periodically to reflect software enhancements. Users will be notified of substantial policy adjustments via software update release notes or direct communications.
+
+Contact: desarrolloindependiente@outlook.com

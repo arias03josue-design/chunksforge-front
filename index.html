@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="es">
+<html lang="es"
+	data-titulo-es="Chunksforge · Editor de mapas fantásticos y topográficos"
+	data-titulo-en="Chunksforge · Fantasy and topographic map editor"
+	data-descripcion-es="Chunksforge es un editor de mapas fantásticos por capas: esculpe el terreno, pinta mares y bosques, traza ríos y crea reinos con fronteras automáticas y territorios en disputa. Interfaz retro pixel art."
+	data-descripcion-en="Chunksforge is a layered fantasy map editor: sculpt the terrain, paint seas and forests, draw rivers and create kingdoms with automatic borders and disputed territories. Retro pixel art interface.">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,24 +14,29 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/generado.css">
 	<script>document.documentElement.classList.add("js");</script>
+	<script src="js/idioma.js"></script>
 </head>
 <body>
 
 <header class="barra-superior">
 	<div class="contenido">
-		<a class="logo" href="#inicio" aria-label="Chunksforge, volver al inicio">
+		<a class="logo" href="#inicio" aria-label="Chunksforge, volver al inicio" data-en-aria-label="Chunksforge, back to top">
 			<img src="assets/arte/titulo-peq.png" width="146" height="40" alt="">
 		</a>
-		<nav class="menu" aria-label="Secciones">
-			<a href="#que-es">Qué es</a>
-			<a href="#etapas">Etapas</a>
-			<a href="#herramientas">Herramientas</a>
-			<a href="#facilidades">Facilidades</a>
-			<a href="#diferencias">Diferencias</a>
-			<a href="#galeria">Galería</a>
-			<a href="#precio">Precio</a>
-			<a href="#empezar">Empezar</a>
+		<nav class="menu" aria-label="Secciones" data-en-aria-label="Sections">
+			<a href="#que-es"><span lang="es">Qué es</span><span lang="en">About</span></a>
+			<a href="#etapas"><span lang="es">Etapas</span><span lang="en">Stages</span></a>
+			<a href="#herramientas"><span lang="es">Herramientas</span><span lang="en">Tools</span></a>
+			<a href="#facilidades"><span lang="es">Facilidades</span><span lang="en">Features</span></a>
+			<a href="#diferencias"><span lang="es">Diferencias</span><span lang="en">Differences</span></a>
+			<a href="#galeria"><span lang="es">Galería</span><span lang="en">Gallery</span></a>
+			<a href="#precio"><span lang="es">Precio</span><span lang="en">Price</span></a>
+			<a href="#empezar"><span lang="es">Empezar</span><span lang="en">Get started</span></a>
 		</nav>
+		<div class="idiomas" role="group" aria-label="Idioma / Language">
+			<button type="button" data-idioma="es" aria-pressed="true" title="Español">ES</button>
+			<button type="button" data-idioma="en" aria-pressed="false" title="English">EN</button>
+		</div>
 	</div>
 </header>
 
@@ -40,71 +49,76 @@
 		<h1 id="titulo-principal" class="titulo">
 			<img src="assets/arte/titulo.png" width="438" height="120" alt="Chunksforge">
 		</h1>
-		<span class="placa">Editor de mapas fantásticos y topográficos</span>
+		<span class="placa"><span lang="es">Editor de mapas fantásticos y topográficos</span><span lang="en">Fantasy and topographic map editor</span></span>
 		<div class="panel-madera menu-principal">
-			<a class="boton boton-confirmar" href="#herramientas">Ver herramientas</a>
-			<a class="boton" href="#que-es">¿Qué es Chunksforge?</a>
-			<a class="boton" href="#galeria">Galería de mapas</a>
-			<a class="boton" href="#diferencias">Qué lo hace distinto</a>
-			<a class="boton" href="#precio">Comprar · $16 USD, pago único</a>
+			<a class="boton boton-confirmar" href="#herramientas"><span lang="es">Ver herramientas</span><span lang="en">See the tools</span></a>
+			<a class="boton" href="#que-es"><span lang="es">¿Qué es Chunksforge?</span><span lang="en">What is Chunksforge?</span></a>
+			<a class="boton" href="#galeria"><span lang="es">Galería de mapas</span><span lang="en">Map gallery</span></a>
+			<a class="boton" href="#diferencias"><span lang="es">Qué lo hace distinto</span><span lang="en">What makes it different</span></a>
+			<a class="boton" href="#precio"><span lang="es">Comprar · $16 USD, pago único</span><span lang="en">Buy · $16 USD, one-time payment</span></a>
 		</div>
 	</div>
-	<span class="placa version">v0.3.0 · Hecho con Godot 4.7</span>
+	<span class="placa version"><span lang="es">v0.3.0 · Hecho con Godot 4.7</span><span lang="en">v0.3.0 · Made with Godot 4.7</span></span>
 </section>
 
 <!-- Qué es y para qué sirve -->
 <section id="que-es" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/tool_land.png" width="36" height="36" alt="">
-		<h2>¿Qué es Chunksforge?</h2>
+		<h2><span lang="es">¿Qué es Chunksforge?</span><span lang="en">What is Chunksforge?</span></h2>
 	</div>
 	<p class="entradilla revelar">
-		Un editor de mapas para mundos inventados. Esculpes el terreno como si fuera arcilla, el agua y las costas aparecen solas,
+		<span lang="es">Un editor de mapas para mundos inventados. Esculpes el terreno como si fuera arcilla, el agua y las costas aparecen solas,
 		y encima colocas montañas, bosques, ríos, ciudades y nombres. Cuando el mundo está listo, en la segunda etapa lo repartes
-		en reinos con sus fronteras, capitales y territorios en disputa. Todo con una interfaz de RPG retro en pixel art.
+		en reinos con sus fronteras, capitales y territorios en disputa. Todo con una interfaz de RPG retro en pixel art.</span>
+		<span lang="en">A map editor for invented worlds. You sculpt the terrain like clay, the water and coastlines appear on their own,
+		and on top you place mountains, forests, rivers, cities and names. When the world is ready, the second stage lets you divide it
+		into kingdoms with their borders, capitals and disputed territories. All with a retro pixel art RPG interface.</span>
 	</p>
 	<div class="dos-columnas">
 		<div class="panel-madera revelar">
-			<h3>¿Para qué sirve?</h3>
+			<h3><span lang="es">¿Para qué sirve?</span><span lang="en">What is it for?</span></h3>
 			<div class="separador"></div>
 			<ul class="lista-iconos">
 				<li>
 					<img src="assets/ui/marker_capital.png" width="36" height="36" alt="">
 					<div>
-						<h4>Campañas de rol</h4>
-						<p>El continente de tu partida, con sus reinos, ciudades y caminos, listo para imprimir o compartir con el grupo.</p>
+						<h4><span lang="es">Campañas de rol</span><span lang="en">Role-playing campaigns</span></h4>
+						<p><span lang="es">El continente de tu partida, con sus reinos, ciudades y caminos, listo para imprimir o compartir con el grupo.</span><span lang="en">Your campaign's continent, with its kingdoms, cities and roads, ready to print or share with your group.</span></p>
 					</div>
 				</li>
 				<li>
 					<img src="assets/ui/tool_label.png" width="36" height="36" alt="">
 					<div>
-						<h4>Novelas y relatos</h4>
-						<p>El mapa de tu mundo con topónimos, mares y fronteras que crecen al mismo ritmo que la historia.</p>
+						<h4><span lang="es">Novelas y relatos</span><span lang="en">Novels and stories</span></h4>
+						<p><span lang="es">El mapa de tu mundo con topónimos, mares y fronteras que crecen al mismo ritmo que la historia.</span><span lang="en">The map of your world, with place names, seas and borders that grow at the same pace as the story.</span></p>
 					</div>
 				</li>
 				<li>
 					<img src="assets/ui/tool_settlement.png" width="36" height="36" alt="">
 					<div>
-						<h4>Videojuegos y prototipos</h4>
-						<p>Exporta PNG de alta resolución para el diseño de niveles, la documentación o el propio juego.</p>
+						<h4><span lang="es">Videojuegos y prototipos</span><span lang="en">Video games and prototypes</span></h4>
+						<p><span lang="es">Exporta PNG de alta resolución para el diseño de niveles, la documentación o el propio juego.</span><span lang="en">Export high-resolution PNGs for level design, documentation or the game itself.</span></p>
 					</div>
 				</li>
 				<li>
 					<img src="assets/ui/tool_nation.png" width="36" height="36" alt="">
 					<div>
 						<h4>Worldbuilding</h4>
-						<p>Reinos, provincias y territorios en disputa con el porcentaje de superficie de cada uno siempre a la vista.</p>
+						<p><span lang="es">Reinos, provincias y territorios en disputa con el porcentaje de superficie de cada uno siempre a la vista.</span><span lang="en">Kingdoms, provinces and disputed territories, with each one's share of the map always in view.</span></p>
 					</div>
 				</li>
 			</ul>
 			<div class="datos">
-				<span class="placa">Mapas 1080p, 2K, 4K o a medida</span>
-				<span class="placa">PNG de 0,5× a 4×</span>
-				<span class="placa">Archivo .map único</span>
+				<span class="placa"><span lang="es">Mapas 1080p, 2K, 4K o a medida</span><span lang="en">1080p, 2K, 4K or custom maps</span></span>
+				<span class="placa"><span lang="es">PNG de 0,5× a 4×</span><span lang="en">PNG from 0.5× to 4×</span></span>
+				<span class="placa"><span lang="es">Archivo .map único</span><span lang="en">A single .map file</span></span>
 			</div>
 		</div>
 		<figure class="marco-mapa revelar" style="margin:0">
-			<img class="captura" src="assets/capturas/editor.webp" width="1600" height="900" alt="El editor de Chunksforge: barra de herramientas a la izquierda, el mapa enmarcado en el centro e inspector a la derecha" loading="lazy">
+			<img class="captura" src="assets/capturas/editor.webp" width="1600" height="900" loading="lazy"
+				alt="El editor de Chunksforge: barra de herramientas a la izquierda, el mapa enmarcado en el centro e inspector a la derecha"
+				data-en-alt="The Chunksforge editor: toolbar on the left, the framed map in the center and the inspector on the right">
 		</figure>
 	</div>
 </section>
@@ -113,52 +127,58 @@
 <section id="etapas" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/icon_stage_political.png" width="28" height="20" alt="">
-		<h2>Dos etapas, un mismo mapa</h2>
+		<h2><span lang="es">Dos etapas, un mismo mapa</span><span lang="en">Two stages, one map</span></h2>
 	</div>
 	<p class="entradilla revelar">
-		Primero el mundo físico; después, quién gobierna cada rincón. Las dos etapas viven en el mismo proyecto
-		y se cambian con un clic (o con <kbd>Ctrl</kbd>+<kbd>1</kbd> y <kbd>Ctrl</kbd>+<kbd>2</kbd>): la capa política se superpone al terreno sin modificarlo.
+		<span lang="es">Primero el mundo físico; después, quién gobierna cada rincón. Las dos etapas viven en el mismo proyecto
+		y se cambian con un clic (o con <kbd>Ctrl</kbd>+<kbd>1</kbd> y <kbd>Ctrl</kbd>+<kbd>2</kbd>): la capa política se superpone al terreno sin modificarlo.</span>
+		<span lang="en">First the physical world; then, who rules every corner. Both stages live in the same project
+		and you switch with one click (or with <kbd>Ctrl</kbd>+<kbd>1</kbd> and <kbd>Ctrl</kbd>+<kbd>2</kbd>): the political layer sits on top of the terrain without changing it.</span>
 	</p>
-	<div class="pestanas revelar" role="tablist" aria-label="Etapas del mapa">
+	<div class="pestanas revelar" role="tablist" aria-label="Etapas del mapa" data-en-aria-label="Map stages">
 		<button class="pestana" role="tab" id="pestana-fisica" aria-controls="etapa-fisica" aria-selected="true">
-			<img src="assets/ui/icon_stage_physical.png" width="24" height="24" alt="">Terreno (Físico)
+			<img src="assets/ui/icon_stage_physical.png" width="24" height="24" alt=""><span lang="es">Terreno (Físico)</span><span lang="en">Terrain (Physical)</span>
 		</button>
 		<button class="pestana" role="tab" id="pestana-politica" aria-controls="etapa-politica" aria-selected="false" tabindex="-1">
-			<img src="assets/ui/icon_stage_political.png" width="28" height="20" alt="">Geopolítica (Político)
+			<img src="assets/ui/icon_stage_political.png" width="28" height="20" alt=""><span lang="es">Geopolítica (Político)</span><span lang="en">Geopolitics (Political)</span>
 		</button>
 	</div>
 	<div class="panel-madera revelar">
 		<div class="panel-etapa" id="etapa-fisica" role="tabpanel" aria-labelledby="pestana-fisica">
 			<figure class="marco-mapa" style="margin:0">
-				<img class="captura" src="assets/capturas/vegetacion.webp" width="1600" height="900" alt="Etapa 1: un continente con montañas y bosques estampados sobre el terreno" loading="lazy">
+				<img class="captura" src="assets/capturas/vegetacion.webp" width="1600" height="900" loading="lazy"
+					alt="Etapa 1: un continente con montañas y bosques estampados sobre el terreno"
+					data-en-alt="Stage 1: a continent with mountains and forests stamped on the terrain">
 			</figure>
 			<div>
-				<h3>Etapa 1 · Terreno</h3>
+				<h3><span lang="es">Etapa 1 · Terreno</span><span lang="en">Stage 1 · Terrain</span></h3>
 				<div class="separador"></div>
 				<ul class="vinetas">
-					<li>Eleva continentes, hunde mares, suaviza y aplana con pinceles de caída suave.</li>
-					<li>Costas, profundidad del agua, oleaje y anillos de costa calculados al momento.</li>
-					<li>Sombreado de relieve y curvas de nivel opcionales; nivel del mar ajustable.</li>
-					<li>Montañas, colinas y bosques con estampado o pincel de dispersión.</li>
-					<li>Ríos que se ensanchan hacia la desembocadura y caminos discontinuos.</li>
-					<li>Ciudades, castillos, ruinas, etiquetas y rejilla cuadrada o hexagonal.</li>
+					<li><span lang="es">Eleva continentes, hunde mares, suaviza y aplana con pinceles de caída suave.</span><span lang="en">Raise continents, sink seas, smooth and flatten with soft-falloff brushes.</span></li>
+					<li><span lang="es">Costas, profundidad del agua, oleaje y anillos de costa calculados al momento.</span><span lang="en">Coastlines, water depth, waves and coastal rings computed on the fly.</span></li>
+					<li><span lang="es">Sombreado de relieve y curvas de nivel opcionales; nivel del mar ajustable.</span><span lang="en">Optional hillshading and contour lines; adjustable sea level.</span></li>
+					<li><span lang="es">Montañas, colinas y bosques con estampado o pincel de dispersión.</span><span lang="en">Mountains, hills and forests with stamping or a scatter brush.</span></li>
+					<li><span lang="es">Ríos que se ensanchan hacia la desembocadura y caminos discontinuos.</span><span lang="en">Rivers that widen toward the mouth, and dashed roads.</span></li>
+					<li><span lang="es">Ciudades, castillos, ruinas, etiquetas y rejilla cuadrada o hexagonal.</span><span lang="en">Cities, castles, ruins, labels and a square or hex grid.</span></li>
 				</ul>
 			</div>
 		</div>
 		<div class="panel-etapa" id="etapa-politica" role="tabpanel" aria-labelledby="pestana-politica" hidden>
 			<figure class="marco-mapa" style="margin:0">
-				<img class="captura" src="assets/capturas/reinos.webp" width="1600" height="900" alt="Etapa 2: el mismo mapa repartido en reinos de colores con sus fronteras y nombres" loading="lazy">
+				<img class="captura" src="assets/capturas/reinos.webp" width="1600" height="900" loading="lazy"
+					alt="Etapa 2: el mismo mapa repartido en reinos de colores con sus fronteras y nombres"
+					data-en-alt="Stage 2: the same map divided into colored kingdoms with their borders and names">
 			</figure>
 			<div>
-				<h3>Etapa 2 · Geopolítica</h3>
+				<h3><span lang="es">Etapa 2 · Geopolítica</span><span lang="en">Stage 2 · Geopolitics</span></h3>
 				<div class="separador"></div>
 				<ul class="vinetas">
-					<li>El terreno se aplana a un atlas de pergamino y aparece el color de cada reino.</li>
-					<li>Pincel y cubo de nación; las aguas territoriales son opcionales.</li>
-					<li>Fronteras automáticas a partir de tus capitales, que siguen costas y cordilleras.</li>
-					<li>Capitales, ciudades, villas y puertos con su etiqueta enlazada.</li>
-					<li>Límites trazados a mano: continuos, punteados o discontinuos.</li>
-					<li>Territorios en disputa con franjas de los colores de quienes los reclaman.</li>
+					<li><span lang="es">El terreno se aplana a un atlas de pergamino y aparece el color de cada reino.</span><span lang="en">The terrain flattens into a parchment atlas and each kingdom's color appears.</span></li>
+					<li><span lang="es">Pincel y cubo de nación; las aguas territoriales son opcionales.</span><span lang="en">Nation brush and bucket; territorial waters are optional.</span></li>
+					<li><span lang="es">Fronteras automáticas a partir de tus capitales, que siguen costas y cordilleras.</span><span lang="en">Automatic borders from your capitals that follow coastlines and mountain ranges.</span></li>
+					<li><span lang="es">Capitales, ciudades, villas y puertos con su etiqueta enlazada.</span><span lang="en">Capitals, cities, villages and ports with their linked labels.</span></li>
+					<li><span lang="es">Límites trazados a mano: continuos, punteados o discontinuos.</span><span lang="en">Hand-drawn borders: solid, dotted or dashed.</span></li>
+					<li><span lang="es">Territorios en disputa con franjas de los colores de quienes los reclaman.</span><span lang="en">Disputed territories striped in the colors of those who claim them.</span></li>
 				</ul>
 			</div>
 		</div>
@@ -169,29 +189,31 @@
 <section id="herramientas" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/tool_relief.png" width="36" height="36" alt="">
-		<h2>Herramientas</h2>
+		<h2><span lang="es">Herramientas</span><span lang="en">Tools</span></h2>
 	</div>
 	<p class="entradilla revelar">
-		Cada herramienta tiene su ranura y su tecla, igual que en la barra del editor. Elige una
-		(o pulsa su tecla mientras ves esta sección) para ver qué hace en el inspector.
+		<span lang="es">Cada herramienta tiene su ranura y su tecla, igual que en la barra del editor. Elige una
+		(o pulsa su tecla mientras ves esta sección) para ver qué hace en el inspector.</span>
+		<span lang="en">Each tool has its slot and its key, just like in the editor's toolbar. Pick one
+		(or press its key while viewing this section) to see what it does in the inspector.</span>
 	</p>
 	<div class="taller">
 		<div class="panel-madera revelar" id="inventario">
 			<div class="grupo-inventario">
-				<h4>Etapa 1 · Terreno</h4>
+				<h4><span lang="es">Etapa 1 · Terreno</span><span lang="en">Stage 1 · Terrain</span></h4>
 				<div class="inventario" data-etapa="1"></div>
 			</div>
 			<div class="grupo-inventario">
-				<h4>Etapa 2 · Geopolítica</h4>
+				<h4><span lang="es">Etapa 2 · Geopolítica</span><span lang="en">Stage 2 · Geopolitics</span></h4>
 				<div class="inventario" data-etapa="2"></div>
 			</div>
 			<div class="grupo-inventario">
-				<h4>En las dos etapas</h4>
+				<h4><span lang="es">En las dos etapas</span><span lang="en">In both stages</span></h4>
 				<div class="inventario" data-etapa="3"></div>
 			</div>
 		</div>
 		<article class="panel-madera inspector revelar" id="inspector" aria-live="polite">
-			<noscript><p>Activa JavaScript para explorar las herramientas una a una.</p></noscript>
+			<noscript><p><span lang="es">Activa JavaScript para explorar las herramientas una a una.</span><span lang="en">Enable JavaScript to explore the tools one by one.</span></p></noscript>
 		</article>
 	</div>
 </section>
@@ -200,71 +222,77 @@
 <section id="facilidades" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/icon_star.png" width="22" height="22" alt="">
-		<h2>Facilidades</h2>
+		<h2><span lang="es">Facilidades</span><span lang="en">Features</span></h2>
 	</div>
-	<p class="entradilla revelar">Pequeñas cosas que hacen que dibujar un mundo entero sea cómodo y seguro.</p>
+	<p class="entradilla revelar"><span lang="es">Pequeñas cosas que hacen que dibujar un mundo entero sea cómodo y seguro.</span><span lang="en">Small things that make drawing a whole world comfortable and safe.</span></p>
 	<div class="rejilla-tarjetas">
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_undo.png" alt="">Deshacer en todo</h4>
-			<p>Cada trazo, sello, borrado o cambio político se deshace con <kbd>Ctrl</kbd>+<kbd>Z</kbd> y se rehace con <kbd>Ctrl</kbd>+<kbd>Y</kbd>.</p>
+			<h4><img src="assets/ui/icon_undo.png" alt=""><span lang="es">Deshacer en todo</span><span lang="en">Undo everything</span></h4>
+			<p><span lang="es">Cada trazo, sello, borrado o cambio político se deshace con <kbd>Ctrl</kbd>+<kbd>Z</kbd> y se rehace con <kbd>Ctrl</kbd>+<kbd>Y</kbd>.</span><span lang="en">Every stroke, stamp, deletion or political change can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd> and redone with <kbd>Ctrl</kbd>+<kbd>Y</kbd>.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_file.png" alt="">Un solo archivo .map</h4>
-			<p>Terreno, símbolos, ríos, etiquetas, reinos, disputas y ajustes en un único archivo abierto (ZIP con JSON legible).</p>
+			<h4><img src="assets/ui/icon_file.png" alt=""><span lang="es">Un solo archivo .map</span><span lang="en">A single .map file</span></h4>
+			<p><span lang="es">Terreno, símbolos, ríos, etiquetas, reinos, disputas y ajustes en un único archivo abierto (ZIP con JSON legible).</span><span lang="en">Terrain, symbols, rivers, labels, kingdoms, disputes and settings in one open file (a ZIP with readable JSON).</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_eye.png" alt="">Exportación nítida</h4>
-			<p>PNG de 0,5× a 4× sin marco ni guías. Lo que ocultas en el menú Capas tampoco se exporta y la rejilla es opcional.</p>
+			<h4><img src="assets/ui/icon_eye.png" alt=""><span lang="es">Exportación nítida</span><span lang="en">Crisp exports</span></h4>
+			<p><span lang="es">PNG de 0,5× a 4× sin marco ni guías. Lo que ocultas en el menú Capas tampoco se exporta y la rejilla es opcional.</span><span lang="en">PNG from 0.5× to 4× with no frame or guides. Whatever you hide in the Layers menu isn't exported either, and the grid is optional.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_reload.png" alt="">Mundos al azar</h4>
-			<p>Empieza con un continente generado por ruido procedural o con un lienzo bajo el agua para dibujarlo a mano alzada.</p>
+			<h4><img src="assets/ui/icon_reload.png" alt=""><span lang="es">Mundos al azar</span><span lang="en">Random worlds</span></h4>
+			<p><span lang="es">Empieza con un continente generado por ruido procedural o con un lienzo bajo el agua para dibujarlo a mano alzada.</span><span lang="en">Start with a continent generated from procedural noise, or with an underwater canvas to draw freehand.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_folder_open.png" alt="">Tus propios assets</h4>
-			<p>Copia PNG o WebP en una carpeta y pulsa Recargar. Sets por subcarpeta, <code>config.json</code> con escala, giro y tinte, y texturas propias de tierra, agua y fronteras.</p>
+			<h4><img src="assets/ui/icon_folder_open.png" alt=""><span lang="es">Tus propios assets</span><span lang="en">Your own assets</span></h4>
+			<p><span lang="es">Copia PNG o WebP en una carpeta y pulsa Recargar. Sets por subcarpeta, <code>config.json</code> con escala, giro y tinte, y texturas propias de tierra, agua y fronteras.</span><span lang="en">Copy PNG or WebP files into a folder and press Reload. Sets by subfolder, <code>config.json</code> with scale, rotation and tint, and your own land, water and border textures.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/tool_grid.png" width="36" height="36" alt="">Capas y rejilla</h4>
-			<p>Muestra u oculta cada capa y superpone una rejilla cuadrada o hexagonal con su tamaño, grosor, color y desplazamiento.</p>
+			<h4><img src="assets/ui/tool_grid.png" width="36" height="36" alt=""><span lang="es">Capas y rejilla</span><span lang="en">Layers and grid</span></h4>
+			<p><span lang="es">Muestra u oculta cada capa y superpone una rejilla cuadrada o hexagonal con su tamaño, grosor, color y desplazamiento.</span><span lang="en">Show or hide each layer and overlay a square or hex grid with its own size, thickness, color and offset.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/tool_label.png" width="36" height="36" alt="">Nombres que se adaptan</h4>
-			<p>El nombre de cada reino se centra, se gira y se curva siguiendo su territorio. Las villas se ocultan al alejar la vista.</p>
+			<h4><img src="assets/ui/tool_label.png" width="36" height="36" alt=""><span lang="es">Nombres que se adaptan</span><span lang="en">Names that adapt</span></h4>
+			<p><span lang="es">El nombre de cada reino se centra, se gira y se curva siguiendo su territorio. Las villas se ocultan al alejar la vista.</span><span lang="en">Each kingdom's name centers, rotates and curves to follow its territory. Villages hide when you zoom out.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/tool_eraser.png" width="36" height="36" alt="">Borrar sin miedo</h4>
-			<p>Borrador para cualquier elemento, clic derecho en cada herramienta y vaciado de capas con confirmación.</p>
+			<h4><img src="assets/ui/tool_eraser.png" width="36" height="36" alt=""><span lang="es">Borrar sin miedo</span><span lang="en">Erase without fear</span></h4>
+			<p><span lang="es">Borrador para cualquier elemento, clic derecho en cada herramienta y vaciado de capas con confirmación.</span><span lang="en">An eraser for any element, right-click in every tool, and clearing whole layers with confirmation.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_check.png" alt="">Nada se pierde</h4>
-			<p>Si cierras la ventana o vuelves al menú con cambios sin guardar, el editor te pregunta antes.</p>
+			<h4><img src="assets/ui/icon_check.png" alt=""><span lang="es">Nada se pierde</span><span lang="en">Nothing gets lost</span></h4>
+			<p><span lang="es">Si cierras la ventana o vuelves al menú con cambios sin guardar, el editor te pregunta antes.</span><span lang="en">If you close the window or go back to the menu with unsaved changes, the editor asks first.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_coords.png" alt="">Fluido en mapas grandes</h4>
-			<p>El pincel responde en pocos milisegundos y las fronteras automáticas de un mapa 1080p se calculan en menos de un segundo.</p>
+			<h4><img src="assets/ui/icon_coords.png" alt=""><span lang="es">Fluido en mapas grandes</span><span lang="en">Smooth on large maps</span></h4>
+			<p><span lang="es">El pincel responde en pocos milisegundos y las fronteras automáticas de un mapa 1080p se calculan en menos de un segundo.</span><span lang="en">The brush responds in a few milliseconds and automatic borders for a 1080p map are computed in under a second.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_sword.png" alt="">Interfaz pixel art nítida</h4>
-			<p>Se escala sólo por números enteros, con fuente y cursores propios: nunca se ve borrosa.</p>
+			<h4><img src="assets/ui/icon_sword.png" alt=""><span lang="es">Interfaz pixel art nítida</span><span lang="en">Crisp pixel art interface</span></h4>
+			<p><span lang="es">Se escala sólo por números enteros, con fuente y cursores propios: nunca se ve borrosa.</span><span lang="en">It only scales by whole numbers, with its own font and cursors: it never looks blurry.</span></p>
 		</div>
 		<div class="panel-hundido tarjeta revelar">
-			<h4><img src="assets/ui/icon_zoom.png" alt="">Atajos para todo</h4>
-			<p>Zoom hacia el cursor, desplazamiento con espacio y una tecla por herramienta para no soltar el ratón.</p>
+			<h4><img src="assets/ui/icon_zoom.png" alt=""><span lang="es">Atajos para todo</span><span lang="en">Shortcuts for everything</span></h4>
+			<p><span lang="es">Zoom hacia el cursor, desplazamiento con espacio y una tecla por herramienta para no soltar el ratón.</span><span lang="en">Zoom toward the cursor, pan with the space bar and one key per tool so you never let go of the mouse.</span></p>
 		</div>
 	</div>
 	<div class="destacadas">
 		<figure class="revelar">
-			<div class="marco-mapa"><img class="captura" src="assets/capturas/gestor-assets.webp" width="1600" height="900" alt="El Gestor de assets con pestañas por categoría, miniaturas y detalle" loading="lazy"></div>
-			<figcaption>Gestor de assets: abre la carpeta, recarga e importa sin salir del editor.</figcaption>
+			<div class="marco-mapa"><img class="captura" src="assets/capturas/gestor-assets.webp" width="1600" height="900" loading="lazy"
+				alt="El Gestor de assets con pestañas por categoría, miniaturas y detalle"
+				data-en-alt="The Asset Manager with category tabs, thumbnails and details"></div>
+			<figcaption><span lang="es">Gestor de assets: abre la carpeta, recarga e importa sin salir del editor.</span><span lang="en">Asset Manager: open the folder, reload and import without leaving the editor.</span></figcaption>
 		</figure>
 		<figure class="revelar">
-			<div class="marco-mapa"><img class="captura" src="assets/capturas/exportar.webp" width="1600" height="900" alt="Diálogo de exportación a PNG con la escala y la resolución final" loading="lazy"></div>
-			<figcaption>Exportar PNG: eliges la escala y ves la resolución final.</figcaption>
+			<div class="marco-mapa"><img class="captura" src="assets/capturas/exportar.webp" width="1600" height="900" loading="lazy"
+				alt="Diálogo de exportación a PNG con la escala y la resolución final"
+				data-en-alt="PNG export dialog with the scale and the final resolution"></div>
+			<figcaption><span lang="es">Exportar PNG: eliges la escala y ves la resolución final.</span><span lang="en">Export PNG: choose the scale and see the final resolution.</span></figcaption>
 		</figure>
 		<figure class="revelar">
-			<div class="marco-mapa"><img class="captura" src="assets/capturas/cambios-sin-guardar.webp" width="1600" height="900" alt="Aviso de cambios sin guardar con las opciones guardar y cerrar, cancelar o cerrar sin guardar" loading="lazy"></div>
-			<figcaption>Aviso de cambios sin guardar al cerrar la ventana.</figcaption>
+			<div class="marco-mapa"><img class="captura" src="assets/capturas/cambios-sin-guardar.webp" width="1600" height="900" loading="lazy"
+				alt="Aviso de cambios sin guardar con las opciones guardar y cerrar, cancelar o cerrar sin guardar"
+				data-en-alt="Unsaved changes warning with the options save and close, cancel or close without saving"></div>
+			<figcaption><span lang="es">Aviso de cambios sin guardar al cerrar la ventana.</span><span lang="en">Unsaved-changes warning when closing the window.</span></figcaption>
 		</figure>
 	</div>
 </section>
@@ -273,55 +301,57 @@
 <section id="diferencias" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/icon_custom_badge.png" width="14" height="14" alt="">
-		<h2>Qué lo hace distinto</h2>
+		<h2><span lang="es">Qué lo hace distinto</span><span lang="en">What makes it different</span></h2>
 	</div>
 	<p class="entradilla revelar">
-		Muchos editores de mapas se centran en pintar una imagen bonita y muchos generadores en crear un mundo al azar.
-		Chunksforge junta las dos cosas: control a mano de cada colina y un mundo político que se calcula solo.
+		<span lang="es">Muchos editores de mapas se centran en pintar una imagen bonita y muchos generadores en crear un mundo al azar.
+		Chunksforge junta las dos cosas: control a mano de cada colina y un mundo político que se calcula solo.</span>
+		<span lang="en">Many map editors focus on painting a pretty picture, and many generators on creating a random world.
+		Chunksforge brings both together: hand control over every hill and a political world that computes itself.</span>
 	</p>
 	<div class="comparativa">
 		<div class="fila encabezados revelar">
-			<span>En muchas herramientas…</span><span></span><span>En Chunksforge</span>
+			<span><span lang="es">En muchas herramientas…</span><span lang="en">In many tools…</span></span><span></span><span><span lang="es">En Chunksforge</span><span lang="en">In Chunksforge</span></span>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>El terreno es una imagen</h4><p>Se pinta con texturas, sin altura real.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">El terreno es una imagen</span><span lang="en">The terrain is an image</span></h4><p><span lang="es">Se pinta con texturas, sin altura real.</span><span lang="en">It's painted with textures, with no real height.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Un heightmap de verdad</h4><p>Esculpes la altura: el mar, las costas, el sombreado de relieve y las curvas de nivel salen de ella, y el nivel del mar se mueve con un deslizador.</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Un heightmap de verdad</span><span lang="en">A real heightmap</span></h4><p><span lang="es">Esculpes la altura: el mar, las costas, el sombreado de relieve y las curvas de nivel salen de ella, y el nivel del mar se mueve con un deslizador.</span><span lang="en">You sculpt the height: the sea, coastlines, hillshading and contour lines come from it, and the sea level moves with a slider.</span></p></div>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>Lo político va aparte</h4><p>Reinos y fronteras en capas manuales o en otro programa.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">Lo político va aparte</span><span lang="en">Politics is separate</span></h4><p><span lang="es">Reinos y fronteras en capas manuales o en otro programa.</span><span lang="en">Kingdoms and borders on manual layers or in another program.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Dos etapas en un proyecto</h4><p>El terreno físico y la geopolítica conviven en el mismo mapa; la capa política se superpone sin tocar el terreno.</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Dos etapas en un proyecto</span><span lang="en">Two stages, one project</span></h4><p><span lang="es">El terreno físico y la geopolítica conviven en el mismo mapa; la capa política se superpone sin tocar el terreno.</span><span lang="en">Physical terrain and geopolitics live in the same map; the political layer sits on top without touching the terrain.</span></p></div>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>Fronteras línea a línea</h4><p>Cada frontera se dibuja a mano.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">Fronteras línea a línea</span><span lang="en">Borders line by line</span></h4><p><span lang="es">Cada frontera se dibuja a mano.</span><span lang="en">Every border is drawn by hand.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Fronteras que entienden el terreno</h4><p>Un Voronoi geodésico reparte la tierra desde tus capitales: no cruza el mar y se frena en las cordilleras. Y si quieres, también las trazas a mano.</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Fronteras que entienden el terreno</span><span lang="en">Borders that understand the terrain</span></h4><p><span lang="es">Un Voronoi geodésico reparte la tierra desde tus capitales: no cruza el mar y se frena en las cordilleras. Y si quieres, también las trazas a mano.</span><span lang="en">A geodesic Voronoi divides the land from your capitals: it doesn't cross the sea and slows at mountain ranges. And if you want, you can draw them by hand too.</span></p></div>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>Conflictos con apaños</h4><p>Zonas disputadas marcadas con trucos de color.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">Conflictos con apaños</span><span lang="en">Conflicts with workarounds</span></h4><p><span lang="es">Zonas disputadas marcadas con trucos de color.</span><span lang="en">Disputed areas marked with color tricks.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Territorios en disputa</h4><p>Franjas diagonales con los colores de cada reino que la reclama, frontera discontinua, nombre propio y una forma de resolverla a favor de quien elijas.</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Territorios en disputa</span><span lang="en">Disputed territories</span></h4><p><span lang="es">Franjas diagonales con los colores de cada reino que la reclama, frontera discontinua, nombre propio y una forma de resolverla a favor de quien elijas.</span><span lang="en">Diagonal stripes in the colors of each kingdom that claims it, a dashed border, its own name and a way to resolve it in favor of whoever you choose.</span></p></div>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>Sin cifras</h4><p>No sabes cuánto ocupa cada reino.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">Sin cifras</span><span lang="en">No numbers</span></h4><p><span lang="es">No sabes cuánto ocupa cada reino.</span><span lang="en">You don't know how much each kingdom covers.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Estadísticas a la vista</h4><p>Porcentaje del mapa por reino, por provincia y por zona en disputa, que no se suma a ninguno de los reclamantes.</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Estadísticas a la vista</span><span lang="en">Statistics in view</span></h4><p><span lang="es">Porcentaje del mapa por reino, por provincia y por zona en disputa, que no se suma a ninguno de los reclamantes.</span><span lang="en">Share of the map per kingdom, per province and per disputed zone, which isn't added to any of the claimants.</span></p></div>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>Recursos propios con pasos extra</h4><p>Importadores o formatos especiales.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">Recursos propios con pasos extra</span><span lang="en">Custom resources take extra steps</span></h4><p><span lang="es">Importadores o formatos especiales.</span><span lang="en">Importers or special formats.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Una carpeta y "Recargar"</h4><p>Tus PNG aparecen en la paleta con su marca dorada; si falta uno, el mapa conserva su sitio con un marcador "?".</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Una carpeta y "Recargar"</span><span lang="en">A folder and "Reload"</span></h4><p><span lang="es">Tus PNG aparecen en la paleta con su marca dorada; si falta uno, el mapa conserva su sitio con un marcador "?".</span><span lang="en">Your PNGs show up in the palette with their gold badge; if one goes missing, the map keeps its place with a "?" marker.</span></p></div>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>Cuenta y conexión</h4><p>Muchas herramientas web piden registrarse.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">Suscripciones y nube</span><span lang="en">Subscriptions and the cloud</span></h4><p><span lang="es">Muchas herramientas web piden pagar cada mes y trabajar conectado.</span><span lang="en">Many web tools ask for a monthly fee and an online connection.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Tu mapa es tuyo</h4><p>Funciona sin conexión y sin cuenta. El .map es un ZIP con JSON y el heightmap: legible y fácil de respaldar.</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Tu mapa es tuyo</span><span lang="en">Your map is yours</span></h4><p><span lang="es">Un solo pago. Tras activar la licencia, diseñas y exportas sin conexión. Los mapas que creas son tuyos, también para uso comercial, y el .map es un ZIP con JSON fácil de respaldar.</span><span lang="en">A single payment. After activating your license, you design and export offline. The maps you create are yours, commercial use included, and the .map file is a ZIP with JSON that's easy to back up.</span></p></div>
 		</div>
 		<div class="fila revelar">
-			<div class="panel-hundido habitual"><h4>Interfaces genéricas</h4><p>Ventanas y botones de siempre.</p></div>
+			<div class="panel-hundido habitual"><h4><span lang="es">Interfaces genéricas</span><span lang="en">Generic interfaces</span></h4><p><span lang="es">Ventanas y botones de siempre.</span><span lang="en">The usual windows and buttons.</span></p></div>
 			<span class="flecha" aria-hidden="true">→</span>
-			<div class="panel-madera nuestro"><h4>Un grimorio de RPG</h4><p>Paneles de madera, pergamino y oro, fuente propia y cursores de guantelete: dibujar un mundo se siente como jugar en uno.</p></div>
+			<div class="panel-madera nuestro"><h4><span lang="es">Un grimorio de RPG</span><span lang="en">An RPG grimoire</span></h4><p><span lang="es">Paneles de madera, pergamino y oro, fuente propia y cursores de guantelete: dibujar un mundo se siente como jugar en uno.</span><span lang="en">Wood, parchment and gold panels, its own font and gauntlet cursors: drawing a world feels like playing in one.</span></p></div>
 		</div>
 	</div>
 </section>
@@ -330,24 +360,24 @@
 <section id="galeria" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/icon_eye.png" width="20" height="14" alt="">
-		<h2>Galería</h2>
+		<h2><span lang="es">Galería</span><span lang="en">Gallery</span></h2>
 	</div>
-	<p class="entradilla revelar">Mapas exportados y capturas reales del programa. Haz clic para verlas en grande.</p>
+	<p class="entradilla revelar"><span lang="es">Mapas exportados y capturas reales del programa. Haz clic para verlas en grande.</span><span lang="en">Exported maps and real screenshots of the program. Click to view them larger.</span></p>
 	<div id="galeria-lista">
 	<div class="galeria galeria-mapas">
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/mapa-exportado.webp" data-titulo="Mapa exportado a PNG (Etapa 1)"><img src="assets/capturas/mapa-exportado.webp" alt="Mapa exportado: una isla con bosques, colinas y montañas nevadas sobre un mar con rejilla hexagonal" loading="lazy"></button><figcaption>Un mapa exportado a PNG: terreno, bosques, montañas, río, rejilla hexagonal y etiquetas.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/mapa-politico.webp" data-titulo="Mapa político exportado (Etapa 2)"><img src="assets/capturas/mapa-politico.webp" alt="El mismo mapa en la etapa política con tres reinos de colores" loading="lazy"></button><figcaption>El mismo mundo en la Etapa 2, repartido en tres reinos.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/mapa-exportado.webp" data-titulo="Mapa exportado a PNG (Etapa 1)" data-en-data-titulo="Map exported to PNG (Stage 1)"><img src="assets/capturas/mapa-exportado.webp" loading="lazy" alt="Mapa exportado: una isla con bosques, colinas y montañas nevadas sobre un mar con rejilla hexagonal" data-en-alt="Exported map: an island with forests, hills and snowy mountains on a sea with a hex grid"></button><figcaption><span lang="es">Un mapa exportado a PNG: terreno, bosques, montañas, río, rejilla hexagonal y etiquetas.</span><span lang="en">An exported PNG map: terrain, forests, mountains, river, hex grid and labels.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/mapa-politico.webp" data-titulo="Mapa político exportado (Etapa 2)" data-en-data-titulo="Exported political map (Stage 2)"><img src="assets/capturas/mapa-politico.webp" loading="lazy" alt="El mismo mapa en la etapa política con tres reinos de colores" data-en-alt="The same map in the political stage with three colored kingdoms"></button><figcaption><span lang="es">El mismo mundo en la Etapa 2, repartido en tres reinos.</span><span lang="en">The same world in Stage 2, divided into three kingdoms.</span></figcaption></figure>
 	</div>
 	<div class="galeria">
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/disputa.webp" data-titulo="Territorio en disputa"><img src="assets/capturas/disputa.webp" alt="Una zona a franjas diagonales verdes y azules entre dos reinos, con su nombre en cursiva" loading="lazy"></button><figcaption>Una marca disputada entre dos reinos, con su propio porcentaje.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/menu.webp" data-titulo="Menú principal"><img src="assets/capturas/menu.webp" alt="Menú principal con el rótulo Chunksforge sobre un mapa de pergamino animado" loading="lazy"></button><figcaption>El menú principal, con barcos y serpientes marinas en movimiento.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/zoom-politico.webp" data-titulo="Vista política de cerca"><img src="assets/capturas/zoom-politico.webp" alt="Vista política ampliada con capitales y nombres de ciudades" loading="lazy"></button><figcaption>De cerca: capitales, ciudades y nombres con zoom.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/paleta-assets.webp" data-titulo="Sellos personalizados"><img src="assets/capturas/paleta-assets.webp" alt="Montañas pixel art propias en la paleta del pincel de sellos con su vista previa flotante" loading="lazy"></button><figcaption>Montañas propias en la paleta, con vista previa flotante.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/nuevo-mapa.webp" data-titulo="Nuevo mapa"><img src="assets/capturas/nuevo-mapa.webp" alt="Diálogo de nuevo mapa con nombre, resolución y modo de inicio" loading="lazy"></button><figcaption>Nuevo mapa: nombre, resolución y modo de inicio.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/capas.webp" data-titulo="Menú Capas"><img src="assets/capturas/capas.webp" alt="Menú Capas desplegado para mostrar u ocultar agua, terreno, ríos, símbolos y etiquetas" loading="lazy"></button><figcaption>Cada capa se muestra u oculta (y no se exporta si está oculta).</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/franjas-disputa.webp" data-titulo="Franjas de una disputa"><img src="assets/capturas/franjas-disputa.webp" alt="Detalle de las franjas diagonales y la frontera discontinua de un territorio en disputa" loading="lazy"></button><figcaption>Detalle de las franjas y la frontera discontinua.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/asentamientos.webp" data-titulo="Ciudades y puntos de interés"><img src="assets/capturas/asentamientos.webp" alt="Capitales y ciudades colocadas en la etapa política, cada una con su etiqueta" loading="lazy"></button><figcaption>Capitales, ciudades, villas y puertos con su etiqueta.</figcaption></figure>
-		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/borrador.webp" data-titulo="Borrador"><img src="assets/capturas/borrador.webp" alt="El Borrador resaltando en rojo las montañas que va a borrar" loading="lazy"></button><figcaption>El Borrador resalta en rojo lo que va a borrar.</figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/disputa.webp" data-titulo="Territorio en disputa" data-en-data-titulo="Disputed territory"><img src="assets/capturas/disputa.webp" loading="lazy" alt="Una zona a franjas diagonales verdes y azules entre dos reinos, con su nombre en cursiva" data-en-alt="A zone with green and blue diagonal stripes between two kingdoms, with its name in italics"></button><figcaption><span lang="es">Una marca disputada entre dos reinos, con su propio porcentaje.</span><span lang="en">A disputed march between two kingdoms, with its own percentage.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/menu.webp" data-titulo="Menú principal" data-en-data-titulo="Main menu"><img src="assets/capturas/menu.webp" loading="lazy" alt="Menú principal con el rótulo Chunksforge sobre un mapa de pergamino animado" data-en-alt="Main menu with the Chunksforge title over an animated parchment map"></button><figcaption><span lang="es">El menú principal, con barcos y serpientes marinas en movimiento.</span><span lang="en">The main menu, with ships and sea serpents on the move.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/zoom-politico.webp" data-titulo="Vista política de cerca" data-en-data-titulo="Political view up close"><img src="assets/capturas/zoom-politico.webp" loading="lazy" alt="Vista política ampliada con capitales y nombres de ciudades" data-en-alt="Zoomed-in political view with capitals and city names"></button><figcaption><span lang="es">De cerca: capitales, ciudades y nombres con zoom.</span><span lang="en">Up close: capitals, cities and names when zoomed in.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/paleta-assets.webp" data-titulo="Sellos personalizados" data-en-data-titulo="Custom stamps"><img src="assets/capturas/paleta-assets.webp" loading="lazy" alt="Montañas pixel art propias en la paleta del pincel de sellos con su vista previa flotante" data-en-alt="Custom pixel art mountains in the stamp brush palette with their floating preview"></button><figcaption><span lang="es">Montañas propias en la paleta, con vista previa flotante.</span><span lang="en">Custom mountains in the palette, with a floating preview.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/nuevo-mapa.webp" data-titulo="Nuevo mapa" data-en-data-titulo="New map"><img src="assets/capturas/nuevo-mapa.webp" loading="lazy" alt="Diálogo de nuevo mapa con nombre, resolución y modo de inicio" data-en-alt="New map dialog with name, resolution and starting mode"></button><figcaption><span lang="es">Nuevo mapa: nombre, resolución y modo de inicio.</span><span lang="en">New map: name, resolution and starting mode.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/capas.webp" data-titulo="Menú Capas" data-en-data-titulo="Layers menu"><img src="assets/capturas/capas.webp" loading="lazy" alt="Menú Capas desplegado para mostrar u ocultar agua, terreno, ríos, símbolos y etiquetas" data-en-alt="Layers menu open to show or hide water, terrain, rivers, symbols and labels"></button><figcaption><span lang="es">Cada capa se muestra u oculta (y no se exporta si está oculta).</span><span lang="en">Each layer can be shown or hidden (and isn't exported when hidden).</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/franjas-disputa.webp" data-titulo="Franjas de una disputa" data-en-data-titulo="Stripes of a dispute"><img src="assets/capturas/franjas-disputa.webp" loading="lazy" alt="Detalle de las franjas diagonales y la frontera discontinua de un territorio en disputa" data-en-alt="Detail of the diagonal stripes and the dashed border of a disputed territory"></button><figcaption><span lang="es">Detalle de las franjas y la frontera discontinua.</span><span lang="en">Detail of the stripes and the dashed border.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/asentamientos.webp" data-titulo="Ciudades y puntos de interés" data-en-data-titulo="Cities and points of interest"><img src="assets/capturas/asentamientos.webp" loading="lazy" alt="Capitales y ciudades colocadas en la etapa política, cada una con su etiqueta" data-en-alt="Capitals and cities placed in the political stage, each with its label"></button><figcaption><span lang="es">Capitales, ciudades, villas y puertos con su etiqueta.</span><span lang="en">Capitals, cities, villages and ports with their labels.</span></figcaption></figure>
+		<figure class="revelar"><button class="miniatura" data-grande="assets/capturas/borrador.webp" data-titulo="Borrador" data-en-data-titulo="Eraser"><img src="assets/capturas/borrador.webp" loading="lazy" alt="El Borrador resaltando en rojo las montañas que va a borrar" data-en-alt="The Eraser highlighting in red the mountains it is about to delete"></button><figcaption><span lang="es">El Borrador resalta en rojo lo que va a borrar.</span><span lang="en">The Eraser highlights in red what it is about to delete.</span></figcaption></figure>
 	</div>
 	</div>
 </section>
@@ -356,32 +386,36 @@
 <section id="precio" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/icon_star.png" width="22" height="22" alt="">
-		<h2>Precio</h2>
+		<h2><span lang="es">Precio</span><span lang="en">Price</span></h2>
 	</div>
-	<p class="entradilla revelar">Un solo pago y Chunksforge es tuyo: sin suscripciones, sin cuentas y sin cargos recurrentes.</p>
+	<p class="entradilla revelar"><span lang="es">Un solo pago y Chunksforge es tuyo: sin suscripciones y sin cargos recurrentes.</span><span lang="en">One payment and Chunksforge is yours: no subscriptions and no recurring charges.</span></p>
 	<div class="precio">
 		<div class="panel-madera tarjeta-precio revelar">
-			<span class="placa">Licencia completa</span>
-			<p class="cifra"><span class="solo-lector">Precio: 16 dólares estadounidenses, pago único.</span><span aria-hidden="true">$16 <span class="moneda">USD</span></span></p>
-			<p class="pago" aria-hidden="true">Pago único</p>
-			<p class="pista">Sin suscripción ni pagos recurrentes.</p>
+			<span class="placa"><span lang="es">Licencia completa</span><span lang="en">Full license</span></span>
+			<p class="cifra"><span class="solo-lector"><span lang="es">Precio: 16 dólares estadounidenses, pago único.</span><span lang="en">Price: 16 US dollars, one-time payment.</span></span><span aria-hidden="true">$16 <span class="moneda">USD</span></span></p>
+			<p class="pago" aria-hidden="true"><span lang="es">Pago único</span><span lang="en">One-time payment</span></p>
+			<p class="pista"><span lang="es">Sin suscripción ni pagos recurrentes.</span><span lang="en">No subscription or recurring payments.</span></p>
 			<div class="acciones">
-				<span class="boton" aria-disabled="true" title="La tienda abrirá pronto">Comprar (próximamente)</span>
-				<a class="boton boton-confirmar" href="mailto:desarrolloindependiente@outlook.com?subject=Chunksforge">Escribir a soporte</a>
+				<span class="boton" aria-disabled="true" title="La tienda abrirá pronto" data-en-title="The store opens soon"><span lang="es">Comprar (próximamente)</span><span lang="en">Buy (coming soon)</span></span>
+				<a class="boton boton-confirmar" href="mailto:desarrolloindependiente@outlook.com?subject=Chunksforge"><span lang="es">Escribir a soporte</span><span lang="en">Email support</span></a>
 			</div>
+			<p class="pista"><span lang="es">Pago seguro a través de Lemon Squeezy (Merchant of Record). Todas las compras son definitivas y no reembolsables.</span><span lang="en">Secure payment through Lemon Squeezy (Merchant of Record). All purchases are final and non-refundable.</span></p>
 		</div>
 		<div class="panel-madera revelar">
-			<h3>Qué incluye</h3>
+			<h3><span lang="es">Qué incluye</span><span lang="en">What's included</span></h3>
 			<div class="separador"></div>
 			<ul class="vinetas">
-				<li>Chunksforge completo: las dos etapas y todas sus herramientas.</li>
-				<li>Software de escritorio digital: se entrega como descarga, sin envío físico.</li>
-				<li>Licencia de uso permanente de la versión que compras.</li>
-				<li>Funciona sin conexión y sin crear ninguna cuenta.</li>
-				<li>Tus mapas, ajustes y assets se guardan sólo en tu equipo.</li>
-				<li>Soporte por correo: <a class="correo" href="mailto:desarrolloindependiente@outlook.com">desarrolloindependiente@<wbr>outlook.com</a></li>
+				<li><span lang="es">Chunksforge completo: las dos etapas y todas sus herramientas.</span><span lang="en">The complete Chunksforge: both stages and all its tools.</span></li>
+				<li><span lang="es">Software de escritorio digital: se entrega como descarga, sin envío físico.</span><span lang="en">Digital desktop software: delivered as a download, with no physical shipping.</span></li>
+				<li><span lang="es">Licencia para un usuario y un equipo, vinculada a tu correo. Los cambios de equipo se solicitan a soporte.</span><span lang="en">A single-user, single-device license linked to your email. Moving to a new computer is requested through support.</span></li>
+				<li><span lang="es">Tras activar la licencia, diseñas y exportas mapas sin conexión, sin telemetría.</span><span lang="en">After activating your license, you design and export maps offline, with no telemetry.</span></li>
+				<li><span lang="es">Los mapas que creas son 100 % tuyos, también para uso comercial y sin regalías.</span><span lang="en">The maps you create are 100% yours, commercial use included and royalty-free.</span></li>
+				<li><span lang="es">Soporte por correo:</span><span lang="en">Email support:</span> <a class="correo" href="mailto:desarrolloindependiente@outlook.com">desarrolloindependiente@<wbr>outlook.com</a></li>
 			</ul>
-			<p class="pista" style="margin-top:16px">Antes de comprar, consulta los <a href="terminos.html">Términos del Servicio</a> y la <a href="privacidad.html">Política de Privacidad</a>.</p>
+			<p class="pista" style="margin-top:16px">
+				<span lang="es">Antes de comprar, consulta el <a href="eula.html">Acuerdo de Licencia (EULA)</a>, los <a href="terms.html">Términos del Servicio</a> y la <a href="privacy.html">Política de Privacidad</a>.</span>
+				<span lang="en">Before buying, please read the <a href="eula.html">License Agreement (EULA)</a>, the <a href="terms.html">Terms of Service</a> and the <a href="privacy.html">Privacy Policy</a>.</span>
+			</p>
 		</div>
 	</div>
 </section>
@@ -390,32 +424,33 @@
 <section id="empezar" class="seccion">
 	<div class="cabecera-seccion revelar">
 		<img class="icono" src="assets/ui/icon_forward.png" width="24" height="22" alt="">
-		<h2>Empezar</h2>
+		<h2><span lang="es">Empezar</span><span lang="en">Get started</span></h2>
 	</div>
 	<div class="dos-columnas">
 		<div class="panel-madera revelar">
-			<h3>Tu primer mapa</h3>
+			<h3><span lang="es">Tu primer mapa</span><span lang="en">Your first map</span></h3>
 			<div class="separador"></div>
 			<ol class="pasos" style="padding:0;margin:0;list-style:none">
-				<li>Instala Chunksforge en tu equipo y ábrelo: es un programa de escritorio, no necesitas conexión ni cuenta.</li>
-				<li>En el menú, <strong>Nuevo Mapa</strong>: elige nombre, resolución y si empiezas con un mundo al azar o a mano alzada.</li>
-				<li>Esculpe con <strong>Tierra</strong> y <strong>Agua</strong>, estampa relieve y bosques y traza los ríos.</li>
-				<li>Pasa a la Etapa 2 con <kbd>Ctrl</kbd>+<kbd>2</kbd>, coloca capitales y pulsa <strong>Generar Fronteras Automáticas</strong>.</li>
-				<li>Guarda con <kbd>Ctrl</kbd>+<kbd>S</kbd> y exporta tu PNG con <kbd>Ctrl</kbd>+<kbd>E</kbd>.</li>
+				<li><span lang="es">Instala Chunksforge y activa tu licencia con el correo de tu compra. Después, todo funciona sin conexión.</span><span lang="en">Install Chunksforge and activate your license with the email you purchased with. After that, everything works offline.</span></li>
+				<li><span lang="es">En el menú, <strong>Nuevo Mapa</strong>: elige nombre, resolución y si empiezas con un mundo al azar o a mano alzada.</span><span lang="en">In the menu, choose <strong>Nuevo Mapa</strong> (New Map): pick a name, a resolution and whether you start with a random world or freehand.</span></li>
+				<li><span lang="es">Esculpe con <strong>Tierra</strong> y <strong>Agua</strong>, estampa relieve y bosques y traza los ríos.</span><span lang="en">Sculpt with <strong>Tierra</strong> (Land) and <strong>Agua</strong> (Water), stamp relief and forests, and draw the rivers.</span></li>
+				<li><span lang="es">Pasa a la Etapa 2 con <kbd>Ctrl</kbd>+<kbd>2</kbd>, coloca capitales y pulsa <strong>Generar Fronteras Automáticas</strong>.</span><span lang="en">Switch to Stage 2 with <kbd>Ctrl</kbd>+<kbd>2</kbd>, place capitals and press <strong>Generar Fronteras Automáticas</strong> (Generate Automatic Borders).</span></li>
+				<li><span lang="es">Guarda con <kbd>Ctrl</kbd>+<kbd>S</kbd> y exporta tu PNG con <kbd>Ctrl</kbd>+<kbd>E</kbd>.</span><span lang="en">Save with <kbd>Ctrl</kbd>+<kbd>S</kbd> and export your PNG with <kbd>Ctrl</kbd>+<kbd>E</kbd>.</span></li>
 			</ol>
+			<p class="pista" lang="en" style="margin-top:16px">Note: the program's interface is currently in Spanish.</p>
 		</div>
 		<div class="panel-madera revelar">
-			<h3>Atajos de teclado</h3>
+			<h3><span lang="es">Atajos de teclado</span><span lang="en">Keyboard shortcuts</span></h3>
 			<div class="separador"></div>
 			<dl class="atajos">
-				<dt>Rueda</dt><dd>Zoom hacia el cursor</dd>
-				<dt><kbd>Espacio</kbd> + arrastrar</dt><dd>Desplazar la vista (también botón central)</dd>
-				<dt><kbd>Ctrl</kbd>+<kbd>0</kbd></dt><dd>Encajar el mapa en la vista</dd>
-				<dt><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Y</kbd></dt><dd>Deshacer / rehacer</dd>
-				<dt><kbd>Ctrl</kbd>+<kbd>S</kbd></dt><dd>Guardar (con <kbd>Mayús</kbd>: guardar como)</dd>
-				<dt><kbd>Ctrl</kbd>+<kbd>E</kbd></dt><dd>Exportar PNG</dd>
-				<dt><kbd>Ctrl</kbd>+<kbd>1</kbd> / <kbd>2</kbd></dt><dd>Etapa física / política</dd>
-				<dt>Clic derecho</dt><dd>Borrar lo que hay bajo el cursor</dd>
+				<dt><span lang="es">Rueda</span><span lang="en">Wheel</span></dt><dd><span lang="es">Zoom hacia el cursor</span><span lang="en">Zoom toward the cursor</span></dd>
+				<dt><kbd><span lang="es">Espacio</span><span lang="en">Space</span></kbd> + <span lang="es">arrastrar</span><span lang="en">drag</span></dt><dd><span lang="es">Desplazar la vista (también botón central)</span><span lang="en">Pan the view (also the middle button)</span></dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>0</kbd></dt><dd><span lang="es">Encajar el mapa en la vista</span><span lang="en">Fit the map to the view</span></dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Y</kbd></dt><dd><span lang="es">Deshacer / rehacer</span><span lang="en">Undo / redo</span></dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>S</kbd></dt><dd><span lang="es">Guardar (con <kbd>Mayús</kbd>: guardar como)</span><span lang="en">Save (with <kbd>Shift</kbd>: save as)</span></dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>E</kbd></dt><dd><span lang="es">Exportar PNG</span><span lang="en">Export PNG</span></dd>
+				<dt><kbd>Ctrl</kbd>+<kbd>1</kbd> / <kbd>2</kbd></dt><dd><span lang="es">Etapa física / política</span><span lang="en">Physical / political stage</span></dd>
+				<dt><span lang="es">Clic derecho</span><span lang="en">Right-click</span></dt><dd><span lang="es">Borrar lo que hay bajo el cursor</span><span lang="en">Delete what's under the cursor</span></dd>
 			</dl>
 		</div>
 	</div>
@@ -427,25 +462,26 @@
 	<div class="contenido pie-columnas">
 		<div>
 			<img src="assets/arte/titulo-peq.png" width="146" height="40" alt="Chunksforge">
-			<p>Editor de mapas fantásticos y topográficos. Software de escritorio digital, v0.3.0.</p>
-			<p><strong>$16 USD · pago único</strong></p>
+			<p><span lang="es">Editor de mapas fantásticos y topográficos. Software de escritorio digital, v0.3.0.</span><span lang="en">Fantasy and topographic map editor. Digital desktop software, v0.3.0.</span></p>
+			<p><strong><span lang="es">$16 USD · pago único</span><span lang="en">$16 USD · one-time payment</span></strong></p>
 		</div>
-		<nav aria-label="Información legal">
+		<nav aria-label="Información legal" data-en-aria-label="Legal information">
 			<h4>Legal</h4>
 			<ul class="enlaces-pie">
-				<li><a href="privacidad.html">Política de Privacidad</a></li>
-				<li><a href="terminos.html">Términos del Servicio</a></li>
+				<li><a href="eula.html"><span lang="es">Acuerdo de Licencia (EULA)</span><span lang="en">License Agreement (EULA)</span></a></li>
+				<li><a href="terms.html"><span lang="es">Términos del Servicio</span><span lang="en">Terms of Service</span></a></li>
+				<li><a href="privacy.html"><span lang="es">Política de Privacidad</span><span lang="en">Privacy Policy</span></a></li>
 			</ul>
 		</nav>
 		<div>
-			<h4>Contacto</h4>
-			<p>Soporte: <a class="correo" href="mailto:desarrolloindependiente@outlook.com">desarrolloindependiente@<wbr>outlook.com</a></p>
-			<p class="pista">Dudas sobre la compra, problemas o sugerencias: te responderemos por correo.</p>
+			<h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
+			<p><span lang="es">Soporte:</span><span lang="en">Support:</span> <a class="correo" href="mailto:desarrolloindependiente@outlook.com">desarrolloindependiente@<wbr>outlook.com</a></p>
+			<p class="pista"><span lang="es">Dudas sobre la compra, problemas o sugerencias: te responderemos por correo.</span><span lang="en">Questions about your purchase, problems or suggestions: we'll reply by email.</span></p>
 		</div>
 	</div>
 	<div class="contenido pie-final">
-		<span>Chunksforge 2026 · Hecho con Godot 4.7 y GDScript</span>
-		<span>La fuente, los paneles y los sprites de esta web los genera el propio programa.</span>
+		<span><span lang="es">Chunksforge 2026 · Hecho con Godot 4.7 y GDScript</span><span lang="en">Chunksforge 2026 · Made with Godot 4.7 and GDScript</span></span>
+		<span><span lang="es">La fuente, los paneles y los sprites de esta web los genera el propio programa.</span><span lang="en">The font, panels and sprites on this website are generated by the program itself.</span></span>
 	</div>
 </footer>
 
@@ -453,13 +489,13 @@
 	<div class="ventana">
 		<div class="barra-titulo">
 			<span id="visor-titulo">Captura</span>
-			<button class="cerrar" type="button" aria-label="Cerrar" data-cerrar></button>
+			<button class="cerrar" type="button" aria-label="Cerrar" data-en-aria-label="Close" data-cerrar></button>
 		</div>
 		<img id="visor-imagen" src="" alt="">
 		<div class="navegacion">
-			<button class="boton" type="button" data-paso="-1"><img src="assets/ui/icon_back.png" width="24" height="22" alt="">Anterior</button>
+			<button class="boton" type="button" data-paso="-1"><img src="assets/ui/icon_back.png" width="24" height="22" alt=""><span lang="es">Anterior</span><span lang="en">Previous</span></button>
 			<span class="placa" id="visor-contador"></span>
-			<button class="boton" type="button" data-paso="1">Siguiente<img src="assets/ui/icon_forward.png" width="24" height="22" alt=""></button>
+			<button class="boton" type="button" data-paso="1"><span lang="es">Siguiente</span><span lang="en">Next</span><img src="assets/ui/icon_forward.png" width="24" height="22" alt=""></button>
 		</div>
 	</div>
 </dialog>

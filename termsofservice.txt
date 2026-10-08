@@ -1,0 +1,21 @@
+TERMS OF SERVICE - CHUNKSFORGE
+
+1. ACCEPTANCE OF TERMS
+By accessing the website or purchasing ChunksForge, you agree to comply with these Terms of Service.
+
+2. DIGITAL PRODUCTS & LICENSING
+ChunksForge is sold as a digital downloadable desktop application. Upon purchasing through our authorized Merchant of Record (Lemon Squeezy), you will receive an activation right linked to your registered email address.
+
+3. NO REFUNDS
+All purchases of ChunksForge are final and non-refundable. Please ensure that your hardware specifications meet the requirements before completing your purchase.
+
+4. INTELLECTUAL PROPERTY & USAGE
+You own 100% of the exported map graphics created with the tool and can use them freely for personal or commercial endeavors without royalty obligations. The software executable and code remain the property of ChunksForge.
+
+5. SYSTEM BINDING
+Each license permits usage on a single hardware setup verified via a cryptographic Hardware Fingerprint. Requests for hardware migration must be submitted to desarrolloindependiente@outlook.com and are subject to verification and discretionary approval.
+
+6. CHANGES TO TERMS
+We reserve the right to revise these Terms of Service at any time. Continued use of the Software or website following updates constitutes acceptance of the modified terms.
+
+For support questions: desarrolloindependiente@outlook.com

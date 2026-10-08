@@ -191,6 +191,13 @@ code {
 	color: var(--sombra);
 }
 
+/* Idioma: cada texto está en español (lang="es") y en inglés (lang="en"); sólo se ve el activo
+   (js/idioma.js pone html[data-idioma]). Sin JavaScript se ve el español. */
+html:not([data-idioma="en"]) body [lang="en"],
+html[data-idioma="en"] body [lang="es"] {
+	display: none !important;
+}
+
 .solo-lector {
 	position: absolute;
 	width: 1px;
@@ -314,8 +321,9 @@ html {
 .barra-superior .contenido {
 	display: flex;
 	align-items: center;
-	gap: 16px;
-	max-width: var(--ancho);
+	gap: 12px;
+	/* Algo más ancha que el contenido: el menú y el selector de idioma caben enteros en escritorio. */
+	max-width: 1400px;
 	margin: 0 auto;
 	padding: 4px 16px;
 }
@@ -326,15 +334,49 @@ html {
 
 .menu {
 	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
 	gap: 2px;
 	overflow-x: auto;
 	scrollbar-width: none;
 }
 
+/* Selector de idioma ES / EN (botones del tema; el activo, hundido y dorado). */
+.idiomas {
+	display: flex;
+	flex: none;
+	gap: 4px;
+}
+
+.idiomas button {
+	min-width: 48px;
+	min-height: 36px;
+	padding: 0 4px 2px;
+	border: 10px solid transparent;
+	border-image: url("../assets/ui/button_normal.png") 10 fill stretch;
+	background: none;
+	color: var(--crema-tenue);
+	font-family: var(--fuente);
+	font-size: var(--letra);
+	line-height: 16px;
+	text-shadow: var(--sombra-texto);
+}
+
+.idiomas button:hover {
+	border-image-source: url("../assets/ui/button_hover.png");
+	color: var(--oro-brillante);
+}
+
+.idiomas button[aria-pressed="true"] {
+	border-image-source: url("../assets/ui/button_pressed.png");
+	padding: 2px 2px 0 6px;
+	color: var(--oro-brillante);
+}
+
 .menu a {
 	position: relative;
 	display: block;
-	padding: 6px 10px 6px 12px;
+	padding: 6px 4px 6px 6px;
 	border: 6px solid transparent;
 	color: var(--crema);
 	text-shadow: var(--sombra-texto);

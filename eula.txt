@@ -1,0 +1,34 @@
+CHUNKSFORGE - END-USER LICENSE AGREEMENT (EULA)
+
+Last Updated: October 2026
+
+PLEASE READ THIS END-USER LICENSE AGREEMENT ("AGREEMENT") CAREFULLY BEFORE DOWNLOADING, INSTALLING, OR USING CHUNKSFORGE ("SOFTWARE"). BY DOWNLOADING, INSTALLING, OR USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT.
+
+1. GRANT OF LICENSE
+Subject to the terms of this Agreement, ChunksForge ("Licensor") grants you a non-exclusive, non-transferable, single-user license to install and use the Software on one (1) primary hardware device owned or controlled by you. 
+
+2. LICENSE ACTIVATION & HARDWARE FINGERPRINT
+- Your license is bound to your registered email address and a unique Hardware Fingerprint (SHA-256 hash derived from system components).
+- One (1) license authorizes installation on one (1) single machine at any given time.
+- Transferring a license to a new computer requires contacting support at desarrolloindependiente@outlook.com. License transfer requests are evaluated on a case-by-case basis and may be subject to approval or rejection at the Licensor’s sole discretion.
+
+3. OWNERSHIP & INTELLECTUAL PROPERTY
+- SOFTWARE OWNERSHIP: The Software, user interface, brand assets, default code, and underlying algorithms are the exclusive property of ChunksForge.
+- USER CONTENT & COMMERCIAL USE: You retain full, exclusive ownership of all maps and images generated and exported using the Software. You are granted a royalty-free, perpetual license to use, modify, distribute, and commercially sell any map artwork created with ChunksForge without paying additional fees or royalties. While crediting ChunksForge is greatly appreciated, it is not legally mandatory.
+
+4. RESTRICTIONS
+You shall not:
+- Reverse engineer, decompile, disassemble, or attempt to derive the source code of the Software.
+- Bypass, modify, or tamper with the Hardware Fingerprint license verification system.
+- Rent, lease, sublicense, resell, or distribute the Software to third parties.
+
+5. REFUND POLICY
+ALL SALES ARE FINAL. Due to the digital and executable nature of the Software, no refunds, returns, or chargebacks will be issued once the purchase is completed and the license key/activation process is initiated.
+
+6. DISCLAIMER OF WARRANTY & LIMITATION OF LIABILITY
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. THE LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE OR UNINTERRUPTED. IN NO EVENT SHALL CHUNKSFORGE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THIS SOFTWARE.
+
+7. MODIFICATIONS TO TERMS
+The Licensor reserves the right to modify these terms at any time. Updated terms will take effect upon deployment in subsequent software updates. Users will be notified of material changes within the application or via email.
+
+Contact for legal inquiries and support: desarrolloindependiente@outlook.com
